@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Romanxz/coding-profile-page/static/css/main.34de6062.chunk.css",
-    "main.js": "/Romanxz/coding-profile-page/static/js/main.3e2db225.chunk.js",
-    "main.js.map": "/Romanxz/coding-profile-page/static/js/main.3e2db225.chunk.js.map",
-    "runtime~main.js": "/Romanxz/coding-profile-page/static/js/runtime~main.13ce7c76.js",
-    "runtime~main.js.map": "/Romanxz/coding-profile-page/static/js/runtime~main.13ce7c76.js.map",
-    "static/css/2.c19b0520.chunk.css": "/Romanxz/coding-profile-page/static/css/2.c19b0520.chunk.css",
-    "static/js/2.fe54909e.chunk.js": "/Romanxz/coding-profile-page/static/js/2.fe54909e.chunk.js",
-    "static/js/2.fe54909e.chunk.js.map": "/Romanxz/coding-profile-page/static/js/2.fe54909e.chunk.js.map",
-    "index.html": "/Romanxz/coding-profile-page/index.html",
-    "precache-manifest.fdee87da8046b300662bdecd862a0c7e.js": "/Romanxz/coding-profile-page/precache-manifest.fdee87da8046b300662bdecd862a0c7e.js",
-    "service-worker.js": "/Romanxz/coding-profile-page/service-worker.js",
-    "static/css/2.c19b0520.chunk.css.map": "/Romanxz/coding-profile-page/static/css/2.c19b0520.chunk.css.map",
-    "static/css/main.34de6062.chunk.css.map": "/Romanxz/coding-profile-page/static/css/main.34de6062.chunk.css.map",
-    "static/media/index.css": "/Romanxz/coding-profile-page/static/media/orbitron-latin-900.cdec72ff.woff"
+    "main.css": "/static/css/main.34de6062.chunk.css",
+    "main.js": "/static/js/main.59ce096b.chunk.js",
+    "main.js.map": "/static/js/main.59ce096b.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.a7d7a130.chunk.css": "/static/css/2.a7d7a130.chunk.css",
+    "static/js/2.fe54909e.chunk.js": "/static/js/2.fe54909e.chunk.js",
+    "static/js/2.fe54909e.chunk.js.map": "/static/js/2.fe54909e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.2b1e01049971cf505edd1ed7059aeb8c.js": "/precache-manifest.2b1e01049971cf505edd1ed7059aeb8c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.a7d7a130.chunk.css.map": "/static/css/2.a7d7a130.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/static/css/main.34de6062.chunk.css.map",
+    "static/media/index.css": "/static/media/orbitron-latin-900.cdec72ff.woff"
   }
 }
