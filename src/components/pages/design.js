@@ -34,7 +34,7 @@ const Design = () => {
           </Shadow>
         </Grid>
         <Grid item>
-          <Pimpedlink to="/menu">BACK</Pimpedlink>
+          <Pimpedlink to={process.env.PUBLIC_URL + '/menu'}>BACK</Pimpedlink>
         </Grid>
       </Grid>
     </Container>

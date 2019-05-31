@@ -79,11 +79,27 @@ class App extends React.Component {
                 <PoseGroup>
                   <RoutesAnimation style={RoutesStyle} key={location.pathname}>
                     <Switch location={location}>
-                      <Route path="/" exact component={Home} />
-                      <Route path="/menu" component={Menu} />
-                      <Route path="/design" component={Design} />
-                      <Route path="/hex" component={Hex} />
-                      <Route path="/about" component={About} />
+                      <Route
+                        path={process.env.PUBLIC_URL + '/'}
+                        exact
+                        component={Home}
+                      />
+                      <Route
+                        path={process.env.PUBLIC_URL + '/menu'}
+                        component={Menu}
+                      />
+                      <Route
+                        path={process.env.PUBLIC_URL + '/design'}
+                        component={Design}
+                      />
+                      <Route
+                        path={process.env.PUBLIC_URL + '/hex'}
+                        component={Hex}
+                      />
+                      <Route
+                        path={process.env.PUBLIC_URL + '/about'}
+                        component={About}
+                      />
                       <Route
                         path="/theme"
                         render={({ props }) => (

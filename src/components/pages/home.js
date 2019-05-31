@@ -11,7 +11,7 @@ const Home = () => {
         padding: 30,
       }}
     >
-      <Pimpedlink to="/menu">MENU</Pimpedlink>
+      <Pimpedlink to={process.env.PUBLIC_URL + '/menu'}>MENU</Pimpedlink>
     </Container>
   )
 }

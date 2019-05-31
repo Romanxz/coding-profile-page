@@ -139,7 +139,7 @@ export default withStyles(styles)(
           <Grid item>
             <Pimpedlink
               menu
-              to="/menu"
+              to={process.env.PUBLIC_URL + '/menu'}
               style={{
                 width: 60,
                 borderRadius: '50%',
