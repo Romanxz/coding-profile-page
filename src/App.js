@@ -1,6 +1,6 @@
 import React from 'react'
 import { PoseGroup } from 'react-pose'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import { RoutesAnimation, RoutesStyle } from './components/animations/routes'
 import Menu from './components/ui/advanced/menu'
 import Background from './components/ui/basic/background'
@@ -69,7 +69,7 @@ class App extends React.Component {
     const { theme } = this.state
     console.log(createMuiTheme(this.state[theme]))
     return (
-      <BrowserRouter>
+      <HashRouter>
         <ThemeProvider
           theme={responsiveFontSizes(createMuiTheme(this.state[theme]))}
         >
@@ -101,7 +101,7 @@ class App extends React.Component {
             )}
           />
         </ThemeProvider>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
