@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.0.1",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-pose": "^4.0.8",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "typeface-orbitron": "0.0.72"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -29,15 +36,11 @@
     ]
   },
   "devDependencies": {
-    "@material-ui/core": "^4.0.1",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
-    "prettier": "^1.17.1",
-    "react-pose": "^4.0.8",
-    "react-router-dom": "^5.0.0",
-    "typeface-orbitron": "0.0.72"
+    "prettier": "^1.17.1"
   },
   "lint-staged": {
     "*.{js, jsx}": [
@@ -50,5 +53,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "homepage":"https://github.com/Romanxz/coding-profile-page"
 }
