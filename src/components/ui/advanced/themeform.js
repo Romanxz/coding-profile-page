@@ -1,14 +1,15 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Textfield from '../basic/textfield'
-import Selector from '../advanced/selector'
-import Pimpedlink from '../advanced/pimpedlink'
+import Selector from './selector'
+import Menulink from '../basic/menulink'
 import Button from '../basic/button'
 import FormErrors from './formerrors'
 import { Grid, Typography } from '@material-ui/core'
+import classes from '*.module.scss'
 
 const styles = {
-  button: {
+  formbutton: {
     marginLeft: 'auto',
     marginRight: 'auto',
     borderRadius: 8,
@@ -18,9 +19,9 @@ const styles = {
 }
 
 export default withStyles(styles)(
-  class Form extends React.Component {
+  class Themeform extends React.Component {
     state = {
-      theme: 'Gradient',
+      theme: 'Black',
       Background: '',
       Text: '',
       formErrors: { Background: '', Text: '' },
@@ -129,7 +130,7 @@ export default withStyles(styles)(
                   : toggleTheme(theme)
               }
               disabled={theme !== 'Custom' ? false : isFormValid ? false : true}
-              style={styles.button}
+              className={classes.formbutton}
             >
               <Typography color="primary" variant="h5">
                 Apply
@@ -137,15 +138,7 @@ export default withStyles(styles)(
             </Button>
           </Grid>
           <Grid item>
-            <Pimpedlink
-              menu
-              to={process.env.PUBLIC_URL + '/menu'}
-              style={{
-                width: 60,
-                borderRadius: '50%',
-                margin: 'auto',
-              }}
-            />
+            <Menulink to="/menu" />
           </Grid>
         </Grid>
       )

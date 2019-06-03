@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '../animations/container'
 import { withStyles } from '@material-ui/core/styles'
 import { Grid } from '@material-ui/core/'
-import Form from '../ui/advanced/form'
+import Themeform from '../ui/advanced/themeform'
 
 const styles = {
   container: {
@@ -12,7 +12,7 @@ const styles = {
     flexDirection: 'column',
     height: '100%',
     width: '100%',
-    paddingTop: 20,
+    // paddingTop: 20,
   },
 }
 
@@ -23,7 +23,7 @@ const Theme = props => {
       <Grid container direction="row" spacing={0}>
         <Grid item lg={4} sm={2} xs={1} />
         <Grid item lg={4} sm={8} xs={10}>
-          <Form
+          <Themeform
             toggleTheme={props.toggleTheme}
             updateCustomTheme={props.updateCustomTheme}
           />

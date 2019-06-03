@@ -24,11 +24,14 @@ class App extends React.Component {
     },
     Black: {
       ...themeTemplate,
+      typography: {
+        fontFamily: 'Jura',
+      },
       palette: {
-        primary: { main: '#0ec73e' },
+        primary: { main: '#E2E2E2' },
         secondary: { main: '#11cb5f' },
       },
-      background: '#19084f',
+      background: '#1C1616',
     },
     Gradient: {
       ...themeTemplate,
@@ -47,7 +50,7 @@ class App extends React.Component {
       },
       background: '#616161',
     },
-    theme: 'Gradient',
+    theme: 'Black',
   }
 
   toggleTheme = name => () => {

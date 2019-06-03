@@ -3,7 +3,7 @@ import 'typeface-orbitron'
 
 const themeTemplate = createMuiTheme({
   typography: {
-    fontFamily: 'orbitron',
+    fontFamily: 'Jura',
   },
   palette: {
     primary: { main: '#4a148c' },
