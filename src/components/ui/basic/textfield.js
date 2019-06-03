@@ -19,12 +19,12 @@ const styles = theme => ({
     border: 'none',
     borderRadius: 8,
     background: 'transparent',
-    fontFamily: 'source-code-pro',
+    fontFamily: 'Jura',
     fontWeight: 500,
     fontSize: 20,
     color: theme.palette.primary.dark,
     outline: 'none',
-    letterSpacing: 1,
+    letterSpacing: 0,
   },
 })
 

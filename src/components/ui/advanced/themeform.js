@@ -9,8 +9,6 @@ import { Grid, Typography } from '@material-ui/core'
 
 const styles = {
   formbutton: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
     borderRadius: 8,
     height: 60,
     width: 150,
@@ -121,7 +119,13 @@ export default withStyles(styles)(
           <Grid item>
             <FormErrors formErrors={this.state.formErrors} />
           </Grid>
-          <Grid item>
+          <Grid
+            item
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
             <Button
               onClick={
                 theme === 'Custom'
@@ -129,14 +133,20 @@ export default withStyles(styles)(
                   : toggleTheme(theme)
               }
               disabled={theme !== 'Custom' ? false : isFormValid ? false : true}
-              classname={this.props.classes.formbuttong}
+              classname={this.props.classes.formbutton}
             >
               <Typography color="primary" variant="h5">
                 Apply
               </Typography>
             </Button>
           </Grid>
-          <Grid item>
+          <Grid
+            item
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
             <Menulink to="/menu" />
           </Grid>
         </Grid>
