@@ -6,7 +6,6 @@ import Menulink from '../basic/menulink'
 import Button from '../basic/button'
 import FormErrors from './formerrors'
 import { Grid, Typography } from '@material-ui/core'
-import classes from '*.module.scss'
 
 const styles = {
   formbutton: {
@@ -130,7 +129,7 @@ export default withStyles(styles)(
                   : toggleTheme(theme)
               }
               disabled={theme !== 'Custom' ? false : isFormValid ? false : true}
-              className={classes.formbutton}
+              classname={this.props.classes.formbuttong}
             >
               <Typography color="primary" variant="h5">
                 Apply
