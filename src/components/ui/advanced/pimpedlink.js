@@ -44,7 +44,7 @@ const Pimpedlink = props => {
         ) : (
           <Typography
             color={props.color ? props.color : 'primary'}
-            variant={props.variant ? props.variant : 'h4'}
+            variant={props.variant ? props.variant : 'h6'}
           >
             {props.children}
           </Typography>

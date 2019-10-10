@@ -1,9 +1,10 @@
 import React from 'react'
 import Container from '../animations/container'
-import Textlink from '../ui/basic/textlink'
-import { Grid, Typography } from '@material-ui/core/'
+import Buttonlink from '../ui/basic/buttonlink'
+import { Grid } from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles'
-import Appear from '../animations/appear'
+import { Spacer } from '../ui/basic/spacer'
+import Glitcher from '../ui/basic/glitcher'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -12,78 +13,33 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
   },
-  border: {
-    width: '100%',
-    height: 2,
-    background:
-      'radial-gradient(circle, rgba(255,255,255,1) 35%, rgba(255,255,255,0.5) 60%, rgba(251,215,215,0) 100%)',
-    boxShadow: '0 0px 0px 2px rgba(161, 152, 173, 0.1)',
-  },
 }))
 
 const Home = () => {
   const classes = useStyles()
-  const { container, border } = classes
+  const { container } = classes
   return (
     <Container className={container}>
-      <Grid container direction="column" justify="center" alignItems="center">
-        <Grid item style={{ height: 300 }}>
-          <Appear>
-            <Typography color="primary" variant="h5">
-              Привет, меня зовут Рома и ты находишься на моей личной страничке.
-            </Typography>
-          </Appear>
-        </Grid>
-        <Grid
-          item
-          container
-          direction="row"
-          justify="center"
-          alignItems="flex-end"
-        >
-          <Grid item lg={2} />
+      <Grid container direction="row">
+        <Grid item xs={6} />
+        <Grid item container direction="column" xs={6}>
+          <Grid item style={{ height: '70%' }} />
           <Grid
             item
             container
+            // style={{ border: '1px solid white' }}
+            direction="column"
             justify="center"
-            alignItems="center"
-            lg={4}
-            md={6}
-            sm={6}
-            xs={12}
+            alignItems="flex-start"
           >
-            <Appear>
-              <Textlink to="/menu" style={{ width: 250 }}>
-                Кто я ?
-              </Textlink>
-            </Appear>
+            <Buttonlink to="/skills">
+              <Glitcher>{'< STORY >'}</Glitcher>
+            </Buttonlink>
+            <Spacer size={4} />
+            <Buttonlink to="/design">
+              <Glitcher>{'< SKILLS >'}</Glitcher>
+            </Buttonlink>
           </Grid>
-
-          <Grid
-            item
-            container
-            justify="center"
-            alignItems="center"
-            lg={4}
-            md={6}
-            sm={6}
-            xs={12}
-          >
-            <Appear>
-              {' '}
-              <Textlink>Что я умею</Textlink>
-            </Appear>
-          </Grid>
-          <Grid item lg={2} />
-        </Grid>
-        <Grid
-          item
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <Appear className={border} />
         </Grid>
       </Grid>
     </Container>

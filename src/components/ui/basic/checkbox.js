@@ -63,7 +63,7 @@ class Checkbox extends React.Component {
 
   render() {
     const { isPressed } = this.state
-    let { style, classes, checked, onClick } = this.props
+    let { style, classes, checked, onChange } = this.props
     const { hiddencheckbox, actualcheckbox, checkmark, name, wrapper } = classes
     return (
       <div className={wrapper}>
@@ -71,15 +71,16 @@ class Checkbox extends React.Component {
           pose={isPressed ? 'press' : 'enter'}
           className={actualcheckbox}
           style={style}
-          onMouseDown={this.togglePress}
-          onMouseUp={this.closePress}
-          onMouseLeave={this.closePress}
-          onClick={onClick}
         >
           <Typography color="primary" variant="button" className={name}>
             {this.props.name}
           </Typography>
-          <label className={actualcheckbox}>
+          <label
+            className={actualcheckbox}
+            onMouseDown={this.togglePress}
+            onMouseUp={this.closePress}
+            onMouseLeave={this.closePress}
+          >
             <div
               className={checkmark}
               style={{ width: checked ? 40 : 0, height: checked ? 40 : 0 }}
@@ -88,6 +89,7 @@ class Checkbox extends React.Component {
               name={this.props.name}
               className={hiddencheckbox}
               type="checkbox"
+              onClick={onChange}
               {...this.props}
             />
           </label>

@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '../animations/container'
 import Shadow from '../animations/shadow'
 
-const Hex = () => {
+const Skills = () => {
   return (
     <Container
       style={{
@@ -10,9 +10,9 @@ const Hex = () => {
         display: 'flex',
       }}
     >
-      <Shadow>/></Shadow>
+      <Shadow>xdd</Shadow>
     </Container>
   )
 }
 
-export default Hex
+export default Skills

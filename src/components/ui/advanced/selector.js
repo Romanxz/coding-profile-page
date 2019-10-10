@@ -2,8 +2,7 @@ import React from 'react'
 import Checkbox from '../basic/checkbox'
 import { Grid } from '@material-ui/core'
 
-const Selector = props => {
-  let { theme, onChange } = props
+const Selector = ({ theme, onChange }) => {
   return (
     <Grid container direction="row" justify="center" spacing={4}>
       <Grid item>

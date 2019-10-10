@@ -1,10 +1,10 @@
 import React from 'react'
 import Container from '../animations/container'
-import { withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import { Grid } from '@material-ui/core/'
 import Themeform from '../ui/advanced/themeform'
 
-const styles = {
+const useStyles = makeStyles({
   container: {
     position: 'relative',
     display: 'flex',
@@ -14,24 +14,26 @@ const styles = {
     width: '100%',
     // paddingTop: 20,
   },
-}
+})
 
-const Theme = props => {
-  const { container } = props.classes
+const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
+  const classes = useStyles()
   return (
-    <Container className={container}>
-      <Grid container direction="row" spacing={0}>
-        <Grid item lg={4} sm={2} xs={1} />
-        <Grid item lg={4} sm={8} xs={10}>
+    <Container className={classes.container}>
+      <Grid container direction="row">
+        <Grid item lg={4} md={3} sm={2} xs={1} />
+        <Grid item lg={4} md={6} sm={8} xs={10}>
           <Themeform
-            toggleTheme={props.toggleTheme}
-            updateCustomTheme={props.updateCustomTheme}
+            theme={theme}
+            toggleTheme={toggleTheme}
+            updateBgColor={updateBgColor}
+            updateTextColor={updateTextColor}
           />
         </Grid>
-        <Grid item lg={4} sm={2} xs={1} />
+        <Grid item lg={4} md={3} sm={2} xs={1} />
       </Grid>
     </Container>
   )
 }
 
-export default withStyles(styles)(Theme)
+export default Theme

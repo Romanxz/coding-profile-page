@@ -36,20 +36,21 @@ class Textfield extends React.Component {
   }
 
   disableFocus = e => {
-    // eslint-disable-next-line no-unused-expressions
-    e.target.value === '' ? this.setState({ isSelected: false }) : null
+    if (e.target.value === '') this.setState({ isSelected: false })
   }
+
+  getInnerRef = () => this.ref
 
   render() {
     const { enableFocus, disableFocus } = this,
-      { name, type, style, disabled } = this.props,
+      { name, type, style, disabled, onChange } = this.props,
       { isSelected } = this.state,
       { input, label } = this.props.classes
     return (
       <Shadow
         className={input}
         style={style}
-        pose={disabled ? 'press' : 'enter'}
+        // pose={disabled ? 'press' : 'enter'}
       >
         <Typography
           color="primary"
@@ -61,11 +62,15 @@ class Textfield extends React.Component {
         </Typography>
         <input
           className={input}
-          id={name}
+          style={{ paddingLeft: 20, width: 'calc(100% - 20px)' }}
+          name={name}
           type={type ? type : 'text'}
+          disabled={disabled}
+          onChange={onChange}
           onSelect={enableFocus}
           onBlur={disableFocus}
-          {...this.props}
+          autoComplete="off"
+          ref={r => (this.ref = r)}
         />
       </Shadow>
     )

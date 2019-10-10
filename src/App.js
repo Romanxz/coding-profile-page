@@ -1,12 +1,12 @@
 import React from 'react'
 import { PoseGroup } from 'react-pose'
-import { HashRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { RoutesAnimation, RoutesStyle } from './components/animations/routes'
 import Menu from './components/ui/advanced/menu'
 import Background from './components/ui/basic/background'
 import Home from './components/pages/home'
 import Design from './components/pages/design'
-import Hex from './components/pages/hex'
+import Skills from './components/pages/skills'
 import About from './components/pages/about'
 import Theme from './components/pages/theme'
 import { ThemeProvider } from '@material-ui/styles'
@@ -17,24 +17,32 @@ class App extends React.Component {
   state = {
     White: {
       ...themeTemplate,
+      typography: {
+        fontFamily: 'Jura',
+      },
       palette: {
         primary: { main: '#1de9b6' },
         secondary: { main: '#00bfa5' },
       },
+      background: '#616161',
     },
     Black: {
       ...themeTemplate,
       typography: {
-        fontFamily: 'Jura',
+        fontFamily: 'nidsans',
       },
       palette: {
         primary: { main: '#E2E2E2' },
         secondary: { main: '#11cb5f' },
       },
-      background: '#1C1616',
+      // background: '#1C1616',
+      background: 'black',
     },
     Gradient: {
       ...themeTemplate,
+      typography: {
+        fontFamily: 'Jura',
+      },
       palette: {
         primary: { main: '#4a148c' },
         secondary: { main: '#11cb5f' },
@@ -44,6 +52,9 @@ class App extends React.Component {
     },
     Custom: {
       ...themeTemplate,
+      typography: {
+        fontFamily: 'Jura',
+      },
       palette: {
         primary: { main: '#4a148c' },
         secondary: { main: '#11cb5f' },
@@ -53,16 +64,27 @@ class App extends React.Component {
     theme: 'Black',
   }
 
-  toggleTheme = name => () => {
+  toggleTheme = name => {
     this.setState({ theme: name })
   }
 
-  updateCustomTheme = (bg, text) => () => {
+  updateBgColor = bgcolorhex => {
     this.setState(state => ({
       Custom: {
-        ...state.White,
-        palette: { primary: { main: text } },
-        background: bg,
+        ...state.Custom,
+        background: bgcolorhex,
+      },
+      theme: 'Custom',
+    }))
+  }
+
+  updateTextColor = textcolorhex => {
+    this.setState(state => ({
+      Custom: {
+        ...state.Custom,
+        palette: {
+          primary: { main: textcolorhex },
+        },
       },
       theme: 'Custom',
     }))
@@ -72,7 +94,7 @@ class App extends React.Component {
     const { theme } = this.state
     console.log(createMuiTheme(this.state[theme]))
     return (
-      <HashRouter>
+      <Router>
         <ThemeProvider
           theme={responsiveFontSizes(createMuiTheme(this.state[theme]))}
         >
@@ -96,8 +118,8 @@ class App extends React.Component {
                         component={Design}
                       />
                       <Route
-                        path={process.env.PUBLIC_URL + '/hex'}
-                        component={Hex}
+                        path={process.env.PUBLIC_URL + '/skills'}
+                        component={Skills}
                       />
                       <Route
                         path={process.env.PUBLIC_URL + '/about'}
@@ -108,8 +130,10 @@ class App extends React.Component {
                         render={({ props }) => (
                           <Theme
                             {...props}
+                            theme={theme}
                             toggleTheme={this.toggleTheme}
-                            updateCustomTheme={this.updateCustomTheme}
+                            updateBgColor={this.updateBgColor}
+                            updateTextColor={this.updateTextColor}
                           />
                         )}
                       />
@@ -120,7 +144,7 @@ class App extends React.Component {
             )}
           />
         </ThemeProvider>
-      </HashRouter>
+      </Router>
     )
   }
 }

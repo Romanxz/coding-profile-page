@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Jura");
 
+@font-face {
+  font-family: 'matrixcodenfi';
+  src: url(./components/themes/fonts/matrixcode.ttf)
+}
+
+@font-face {
+  font-family: 'nidsans';
+  src: url(./components/themes/fonts/nidsans.ttf)
+}
+
+@font-face {
+  font-family: 'vgr';
+  src: url(./media/fonts/VGRregular.ttf)
+}
+
+@font-face {
+  font-family: 'marske';
+  src: url(./media/fonts/Marske.ttf)
+}
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

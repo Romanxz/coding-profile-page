@@ -22,20 +22,67 @@ const Design = () => {
       <Grid
         container
         direction="column"
-        justify="center"
+        justify="flex-start"
         alignItems="center"
-        spacing={6}
       >
-        <Grid item>
-          <Shadow style={{ padding: 30 }}>
-            <Typography color="secondary" variant="h2">
-              In Development...
-            </Typography>
-          </Shadow>
-        </Grid>
-        <Grid item>
-          <Pimpedlink to={process.env.PUBLIC_URL + '/menu'}>BACK</Pimpedlink>
-        </Grid>
+        <Grid item style={{ height: 60, width: '100%' }} />
+        <Shadow style={{ height: 80, width: '100%' }}>
+          <Grid
+            item
+            container
+            direction="row"
+            justify="flex-end"
+            alignItems="center"
+            style={{ height: 80 }}
+            spacing={3}
+          >
+            <Grid item>
+              <Pimpedlink
+                style={{ height: 40, width: 120 }}
+                variant="h6"
+                to="/"
+              >
+                HOME
+              </Pimpedlink>
+            </Grid>
+            <Grid item>
+              <Pimpedlink
+                style={{ height: 40, width: 120 }}
+                variant="h6"
+                to="/design"
+              >
+                DESIGN
+              </Pimpedlink>
+            </Grid>
+            <Grid item>
+              <Pimpedlink
+                style={{ height: 40, width: 120 }}
+                variant="h6"
+                to="/hex"
+              >
+                HEX
+              </Pimpedlink>
+            </Grid>
+            <Grid item>
+              <Pimpedlink
+                style={{ height: 40, width: 120 }}
+                variant="h6"
+                to="/about"
+              >
+                ABOUT
+              </Pimpedlink>
+            </Grid>
+            <Grid item>
+              <Pimpedlink
+                style={{ height: 40, width: 120 }}
+                variant="h6"
+                to="/theme"
+              >
+                THEME
+              </Pimpedlink>
+            </Grid>
+          </Grid>
+        </Shadow>
       </Grid>
     </Container>
   )

@@ -41,7 +41,7 @@ const Menu = props => {
           <Pimpedlink to="/design">DESIGN</Pimpedlink>
         </Grid>
         <Grid item>
-          <Pimpedlink to="/hex">HEX</Pimpedlink>
+          <Pimpedlink to="/skills">SKILLS</Pimpedlink>
         </Grid>
         <Grid item>
           <Pimpedlink to="/about">ABOUT</Pimpedlink>
