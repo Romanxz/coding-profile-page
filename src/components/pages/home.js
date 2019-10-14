@@ -32,13 +32,9 @@ const Home = () => {
             justify="center"
             alignItems="flex-start"
           >
-            <Buttonlink to="/skills">
-              <Glitcher>{'< STORY >'}</Glitcher>
-            </Buttonlink>
+            <Buttonlink to="/skills">{'< STORY >'}</Buttonlink>
             <Spacer size={4} />
-            <Buttonlink to="/design">
-              <Glitcher>{'< SKILLS >'}</Glitcher>
-            </Buttonlink>
+            <Buttonlink to="/design">{'< SKILLS >'}</Buttonlink>
           </Grid>
         </Grid>
       </Grid>

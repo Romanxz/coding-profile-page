@@ -5,7 +5,7 @@ const useStyles = makeStyles(theme => ({
   glitcher: {
     position: 'relative',
     color: 'white',
-    fontFamily: 'marske',
+    fontFamily: 'Jura',
     fontWeight: 200,
     fontSize: 28,
     letterSpacing: 2,

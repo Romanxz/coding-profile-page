@@ -29,7 +29,7 @@ class App extends React.Component {
     Black: {
       ...themeTemplate,
       typography: {
-        fontFamily: 'nidsans',
+        fontFamily: 'Jura',
       },
       palette: {
         primary: { main: '#E2E2E2' },

@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({
     height: 50,
     background: 'inherit',
     color: 'inherit',
+    
   },
 }))
 
