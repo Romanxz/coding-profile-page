@@ -1,6 +1,6 @@
 import posed from 'react-pose'
 
-const SHADOW_COLOR = '57, 255, 20,'
+export const SHADOW_COLOR = '196, 0, 196,'
 
 const Shadow = posed.div({
   enter: {

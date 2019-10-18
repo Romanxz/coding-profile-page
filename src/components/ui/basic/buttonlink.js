@@ -11,11 +11,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    width: 220,
-    height: 50,
+    width: '100%',
+    height: '100%',
     background: 'inherit',
     color: 'inherit',
-    
   },
 }))
 
@@ -24,7 +23,7 @@ const Buttonlink = props => {
   return (
     <Button style={props.style}>
       <Link className={classes.link} style={props.style} to={props.to}>
-      {props.children}
+        {props.children}
       </Link>
     </Button>
   )

@@ -20,6 +20,10 @@
   src: url(./media/fonts/Marske.ttf)
 }
 
+@font-face {
+  font-family: 'SF';
+  src: url(./media/fonts/Sfautobold.ttf)
+}
 
 
 body {

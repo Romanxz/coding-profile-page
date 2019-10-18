@@ -11,70 +11,55 @@ const styles = theme => ({
     height: 60,
     color: 'white',
     fontFamily: 'Jura',
-    fontWeight: 500,
-    fontSize: 24,
-    letterSpacing: 2,
-    // border: '1px solid green',
+    fontWeight: 400,
+    fontSize: 22,
+    letterSpacing: 1,
     background: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
     userSelect: 'none',
     boxSizing: 'border-box',
-    '&::before': {
-      content: `""`,
-      position: 'absolute',
-      boxSizing: 'border-box',
-      zIndex: 1,
-      top: -1,
-      left: -1,
-      width: 250,
-      height: 60,
-      border: '1px double #c70081',
-      opacity: 0.5,
-      filter: 'saturate(500%)',
-    },
-    '&::after': {
-      content: `""`,
-      position: 'absolute',
-      boxSizing: 'border-box',
-      zIndex: 1,
-      top: 1,
-      left: 1,
-      width: 250,
-      height: 60,
-      border: '1px double #006b91',
-      opacity: 0.5,
-      filter: 'saturate(500%)',
-      // clip: 'rect(44px, 450px, 56px, 0)',
-      // animation: 'noise 2s infinite linear alternate-reverse',
-    },
   },
-  blur: {
-    zIndex: 5,
-    position: 'absolute',
-    display: 'flex',
-    width: 270,
-    height: 75,
-    background: 'none',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-    userSelect: 'none',
-    boxSizing: 'border-box',
-    filter: 'blur(8px)',
-  },
-  '@keyframes noise': {
-    '0%': {
-      clip: 'rect(44px, 450px, 56px, 0)',
-    },
-    '50%': {
-      clip: 'rect(142px, 77px, 3px, 0)',
-    },
-    '100%': {
-      clip: 'rect(68px, 820px, 33px, 0)',
-    },
-  },
+  // frame: {
+  //   zIndex: -2,
+  //   position: 'absolute',
+  //   top: 0,
+  //   left: 0,
+  //   display: 'flex',
+  //   width: 'inherit',
+  //   height: 'inherit',
+  //   background: 'transparent',
+  //   justifyContent: 'center',
+  //   boxSizing: 'border-box',
+  //   opacity: 0.4,
+  //   '&::before': {
+  //     content: `""`,
+  //     position: 'absolute',
+  //     boxSizing: 'border-box',
+  //     zIndex: 2,
+  //     top: -1,
+  //     left: -2,
+  //     width: 'inherit',
+  //     height: 'inherit',
+  //     border: '1px double #0d00ff',
+  //     opacity: 1,
+  //     filter: 'saturate(2000%) ',
+  //   },
+  //   '&::after': {
+  //     content: `""`,
+  //     position: 'absolute',
+  //     boxSizing: 'border-box',
+  //     zIndex: 1,
+  //     top: 1,
+  //     left: 2,
+  //     width: 'inherit',
+  //     height: 'inherit',
+  //     border: '1px double #ff0044',
+  //     opacity: 1,
+  //     filter: 'saturate(2000%) ',
+  //   },
+  // },
 })
 
 class Button extends React.Component {
@@ -104,8 +89,8 @@ class Button extends React.Component {
         // onPointerUp={this.closePress}
         onMouseLeave={this.closePress}
       >
+        <div className={classes.frame} />
         {children}
-        <div className={classes.blur} />
       </Shadow>
     )
   }
