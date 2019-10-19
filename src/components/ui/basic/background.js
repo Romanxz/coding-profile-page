@@ -1,35 +1,104 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
-import glitchart from '../../../media/art/glitchart.jpg'
+import Particles from 'react-particles-js'
 
 const useStyles = makeStyles(theme => ({
   background: {
-    zIndex: 100,
+    zIndex: -1,
     position: 'fixed',
     display: 'flex',
     top: 0,
     left: 0,
     width: '100%',
     height: '100%',
-    // background: theme.background,
-    background: "#1a1a1f",
-    '&::after': {
-      content: `""`,
-      backgroundImage: `url(${glitchart})`,
-      opacity: 0,
-      top: 0,
-      left: 0,
-      bottom: 0,
-      right: 0,
-      position: 'absolute',
-      zIndex: -1,
-    },
+    background: '#1a1a1f',
+  },
+  particles: {
+    zIndex: -1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
   },
 }))
 
+var particles = {
+  particles: {
+    number: {
+      value: 180,
+      density: { enable: true, value_area: 881.8766334760375 },
+    },
+    color: { value: '#3cff00' },
+    shape: {
+      type: 'polygon',
+      stroke: { width: 0, color: '#000000' },
+      polygon: { nb_sides: 6 },
+      image: { src: 'img/github.svg', width: 100, height: 100 },
+    },
+    opacity: {
+      value: 0.5692112816072606,
+      random: true,
+      anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+    },
+    size: {
+      value: 2,
+      random: true,
+      anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+    },
+    line_linked: {
+      enable: true,
+      distance: 144.30708547789706,
+      color: '#0077ff',
+      opacity: 0.40246529723245905,
+      width: 0.5,
+    },
+    move: {
+      enable: true,
+      speed: 9.620472365193136,
+      direction: 'none',
+      random: true,
+      straight: false,
+      out_mode: 'bounce',
+      bounce: false,
+      attract: { enable: true, rotateX: 561.194221302933, rotateY: 1200 },
+    },
+  },
+  interactivity: {
+    detect_on: 'window',
+    events: {
+      onhover: { enable: true, mode: 'grab' },
+      onclick: { enable: false, mode: 'bubble' },
+      resize: true,
+    },
+    modes: {
+      grab: {
+        distance: 219.26084732136317,
+        line_linked: { opacity: 0.6087378560910799 },
+      },
+      bubble: {
+        distance: 201,
+        size: 12,
+        duration: 2,
+        opacity: 0.576574820733955,
+        speed: 3,
+      },
+      repulse: { distance: 200, duration: 0.4 },
+      push: { particles_nb: 4 },
+      remove: { particles_nb: 2 },
+    },
+  },
+  retina_detect: true,
+}
+
 const Background = props => {
   const classes = useStyles()
-  return <div className={classes.background}>{props.children}</div>
+  return (
+    <div className={classes.background}>
+      {/* <Particles params={particles} className={classes.particles} /> */}
+      {props.children}
+    </div>
+  )
 }
 
 export default Background

@@ -101,7 +101,7 @@ class App extends React.Component {
           <Route
             render={({ location }) => (
               <Background>
-                <PoseGroup>
+                <PoseGroup animateOnMount>
                   <RoutesAnimation style={RoutesStyle} key={location.pathname}>
                     <Switch location={location}>
                       <Route
