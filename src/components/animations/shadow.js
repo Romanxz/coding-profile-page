@@ -3,7 +3,7 @@ import posed from 'react-pose'
 export const SHADOW_COLOR = '196, 0, 196,'
 
 const Shadow = posed.div({
-  hoverable: true,
+  pressable: true,
   enter: {
     y: 0,
     boxShadow: `14px 14px 28px rgba(${SHADOW_COLOR} 0.22), 3px 10px 10px rgba(${SHADOW_COLOR} 0.19)`,

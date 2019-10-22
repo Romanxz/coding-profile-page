@@ -29,6 +29,8 @@ const styles = theme => ({
     display: 'flex',
     width: 'inherit',
     height: 'inherit',
+    filter: 'blur(3px)',
+    userSelect: 'none',
     background: 'transparent',
     justifyContent: 'center',
     boxSizing: 'border-box',
@@ -83,12 +85,8 @@ class Button extends React.Component {
     return (
       <Shadow
         className={classes.button}
-        style={style}
-        pose={disabled ? 'enter' : isPressed ? 'press' : 'enter'}
         {...this.props}
         onClick={disabled ? null : onClick}
-        onMouseDown={this.togglePress}
-        onMouseUp={this.closePress}
         // onPointerDown={this.togglePress}
         // onPointerUp={this.closePress}
         onMouseMove={this.toggleHover}
@@ -96,7 +94,7 @@ class Button extends React.Component {
       >
         <div
           className={classes.frame}
-          style={{ opacity: isHovered ? 0.4 : 0 }}
+          style={{ opacity: isHovered ? 0.8 : 0 }}
         />
         {children}
       </Shadow>

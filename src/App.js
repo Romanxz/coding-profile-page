@@ -21,10 +21,10 @@ class App extends React.Component {
         fontFamily: 'Jura',
       },
       palette: {
-        primary: { main: '#1de9b6' },
-        secondary: { main: '#00bfa5' },
+        primary: { main: '#000000' },
+        secondary: { main: '#d63375' },
       },
-      background: '#616161',
+      background: '#cafad6',
     },
     Black: {
       ...themeTemplate,
@@ -36,7 +36,8 @@ class App extends React.Component {
         secondary: { main: '#11cb5f' },
       },
       // background: '#1C1616',
-      background: 'black',
+      background: '#1a1a1f',
+      shadow: '196, 0, 196,',
     },
     Gradient: {
       ...themeTemplate,
@@ -59,7 +60,8 @@ class App extends React.Component {
         primary: { main: '#4a148c' },
         secondary: { main: '#11cb5f' },
       },
-      background: '#616161',
+      background: '#1a1a1f',
+      shadow: '196, 0, 196,',
     },
     theme: 'Black',
   }

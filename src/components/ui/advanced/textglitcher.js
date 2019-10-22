@@ -10,12 +10,11 @@ const useStyles = makeStyles(theme => ({
   },
   glitcher: {
     position: 'relative',
-    color: 'white',
+    color: 'inherit',
     fontFamily: 'inherit',
     fontWeight: 'inherit',
     fontSize: 'inherit',
     letterSpacing: 'inherit',
-    cursor: 'text',
     zIndex: 100,
     filter: 'saturate(2000%)',
     '&::before': {
@@ -24,11 +23,11 @@ const useStyles = makeStyles(theme => ({
       width: '100%',
       height: '100%',
       zIndex: -1,
-      left: -3,
-      top: -2,
+      left: -2,
+      top: 1,
       opacity: 1,
       textShadow: '-1px 0 red',
-      animation: `$glitch2 3s infinite ease-out alternate-reverse`,
+      animation: `$glitch2 3s infinite ease-out reverse`,
       animationPlayState: styleprops =>
         styleprops.isEnabled
           ? 'running'
@@ -45,8 +44,8 @@ const useStyles = makeStyles(theme => ({
       width: '100%',
       height: '100%',
       zIndex: -1,
-      left: 3,
-      top: 2,
+      left: 2,
+      top: -1,
       opacity: 1,
       animation: `$glitch 3s infinite ease-out alternate-reverse`,
       animationPlayState: styleprops =>
@@ -149,11 +148,11 @@ const TextGlitcher = ({ duration, isEnabled, ...props }) => {
         {...props}
         data-text={props.data ? props.data : props.children}
       >
-        <div
+        {/* <div
           className={classes.trigger}
           onMouseOver={() => toggleHover(true)}
-          onMouseLeave={() => toggleHover(false)}
-        />
+          onMouseLeave={() => toggleHover(false)} */}
+        {/* /> */}
         {props.children}
       </div>
     </>

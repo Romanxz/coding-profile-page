@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
-import Pimpedlink from './pimpedlink'
+import Buttonlink from './buttonlink'
 import Container from '../../animations/container'
 import Grid from '@material-ui/core/Grid'
 
@@ -35,19 +35,29 @@ const Menu = props => {
         spacing={6}
       >
         <Grid item>
-          <Pimpedlink to="/">HOME</Pimpedlink>
+          <Buttonlink glitch to="/">
+            HOME
+          </Buttonlink>
         </Grid>
         <Grid item>
-          <Pimpedlink to="/design">DESIGN</Pimpedlink>
+          <Buttonlink glitch to="/design">
+            DESIGN
+          </Buttonlink>
         </Grid>
         <Grid item>
-          <Pimpedlink to="/skills">SKILLS</Pimpedlink>
+          <Buttonlink glitch to="/skills">
+            SKILLS
+          </Buttonlink>
         </Grid>
         <Grid item>
-          <Pimpedlink to="/about">ABOUT</Pimpedlink>
+          <Buttonlink glitch to="/about">
+            ABOUT
+          </Buttonlink>
         </Grid>
         <Grid item>
-          <Pimpedlink to="/theme">THEME</Pimpedlink>
+          <Buttonlink glitch to="/theme">
+            THEME
+          </Buttonlink>
         </Grid>
         <Grid item />
       </Grid>

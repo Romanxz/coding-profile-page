@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../../animations/container'
-import Buttonlink from '../../ui/basic/buttonlink'
-import { Grid } from '@material-ui/core/'
+import Buttonlink from '../../ui/advanced/buttonlink'
+import { Grid, Typography } from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles'
 import { Spacer } from '../../ui/basic/spacer'
 import TextGlitcher from '../../ui/advanced/textglitcher'
@@ -23,17 +23,28 @@ const Home = () => {
   return (
     <Container className={container}>
       <Grid container direction="row">
-        <Grid item xs={6} />
-        <Grid item container direction="column" xs={6}>
-          <Grid item style={{ height: '70%' }}>
-            <Spacer size={10} />
-            <Header />
-            <Spacer size={4} />
+        <Grid item xs={7} />
+        <Grid item container direction="column" xs={5}>
+          <Grid
+            item
+            container
+            direction="column"
+            justify="flex-start"
+            alignItems="flex-start"
+            style={{ height: '60%' }}
+          >
+            <Spacer size={8} />
             <TextShadow noshadow>
-              <TextGlitcher>
-                Welcome to my official page. I am junior Javascript coder, Web
-                designer and developer.
-              </TextGlitcher>
+              <Typography color="primary" variant="h6">
+                Hello! My name is
+              </Typography>
+            </TextShadow>
+            <Header />
+            <Spacer size={1} />
+            <TextShadow noshadow>
+              <Typography color="primary" variant="h6">
+                and I am a Javascript developer.
+              </Typography>
             </TextShadow>
           </Grid>
           <Grid
@@ -43,13 +54,19 @@ const Home = () => {
             justify="center"
             alignItems="flex-start"
           >
-            <Buttonlink to="/skills">
-              <TextGlitcher isEnabled>{'< STORY >'}</TextGlitcher>
-            </Buttonlink>
-            <Spacer size={4} />
-            <Buttonlink to="/design">
-              <TextGlitcher isEnabled>{'< SKILLS >'}</TextGlitcher>
-            </Buttonlink>
+            <Container>
+              <Buttonlink glitch to="/skills">
+                MY SKILLS
+              </Buttonlink>
+              <Spacer size={4} />
+              <Buttonlink glitch to="/about">
+                MY STORY
+              </Buttonlink>
+              <Spacer size={4} />
+              <Buttonlink glitch to="/theme">
+                THEME
+              </Buttonlink>
+            </Container>
           </Grid>
         </Grid>
       </Grid>

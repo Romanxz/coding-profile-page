@@ -3,7 +3,7 @@ import posed from 'react-pose'
 export const RoutesAnimation = posed.div({
   enter: {
     opacity: 1,
-    delay: 100,
+    delay: 50,
     beforeChildren: true,
   },
   exit: {

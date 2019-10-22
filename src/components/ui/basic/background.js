@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     width: '100%',
     height: '100%',
-    background: '#1a1a1f',
+    background: theme.background,
   },
   particles: {
     zIndex: -1,
@@ -26,10 +26,10 @@ const useStyles = makeStyles(theme => ({
 var particles = {
   particles: {
     number: {
-      value: 180,
-      density: { enable: true, value_area: 881.8766334760375 },
+      value: 100,
+      density: { enable: true, value_area: 600 },
     },
-    color: { value: '#3cff00' },
+    color: { value: '#2dfaa1' },
     shape: {
       type: 'polygon',
       stroke: { width: 0, color: '#000000' },
@@ -37,12 +37,12 @@ var particles = {
       image: { src: 'img/github.svg', width: 100, height: 100 },
     },
     opacity: {
-      value: 0.5692112816072606,
+      value: 0.5,
       random: true,
       anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
     },
     size: {
-      value: 2,
+      value: 3,
       random: true,
       anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
     },
@@ -55,7 +55,7 @@ var particles = {
     },
     move: {
       enable: true,
-      speed: 9.620472365193136,
+      speed: 5,
       direction: 'none',
       random: true,
       straight: false,
