@@ -95,7 +95,7 @@ const useStyles = makeStyles(theme => ({
       left: 3,
     },
   },
-  '@keyframes slice4': {
+  '@keyframes slice': {
     '0%': {
       left: -4,
     },

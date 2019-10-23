@@ -16,10 +16,21 @@ const useStyles = makeStyles(theme => ({
     // width: '100%',
     // height: '20%',
   },
+  slicer: {
+    position: 'absolute',
+    width: '100%',
+    fontFamily: 'SF, sans-serif',
+    fontWeight: 900,
+    fontSize: 120,
+    letterSpacing: 0,
+  },
 }))
+
+const values1 = { x1: '0px', x2: '4px', x3: '-10px' }
 
 const Header = props => {
   const classes = useStyles()
+  const { header, slicer } = classes
   return (
     <Grid
       item
@@ -27,9 +38,18 @@ const Header = props => {
       directon="column"
       justify="flex-start"
       alignItems="center"
-      className={classes.header}
+      className={header}
     >
-      <TextShadow xover direction="left">
+      <TextShadow
+        split
+        valuez={values1}
+        // mask="linear-gradient(black 35%, transparent 35%)"
+      >
+        <TextGlitcher style={{ cursor: 'crosshair' }} isEnabled data="ROMAN">
+          ROMAN
+        </TextGlitcher>
+      </TextShadow>
+      {/* <TextShadow xover direction="right">
         <TextSlicer
           style={{
             position: 'absolute',
@@ -40,27 +60,11 @@ const Header = props => {
             letterSpacing: 0,
           }}
         >
-          <TextGlitcher style={{ cursor: 'crosshair' }} isEnabled data="ROMAN">
-            ROMAN
-          </TextGlitcher>
-        </TextSlicer>
-      </TextShadow>
-      <TextShadow xover direction="right">
-        {/* <TextSlicer
-          style={{
-            position: 'absolute',
-            width: '100%',
-            fontFamily: 'SF, sans-serif',
-            fontWeight: 900,
-            fontSize: 120,
-            letterSpacing: 0,
-          }}
-        > */}
         <TextGlitcher style={{ cursor: 'crosshair' }} isEnabled data="GORBUNOV">
           GORBUNOV
         </TextGlitcher>
-        {/* </TextSlicer> */}
-      </TextShadow>
+        </TextSlicer>
+      </TextShadow> */}
     </Grid>
   )
 }
