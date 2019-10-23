@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Spacer } from '../../ui/basic/spacer'
 import TextGlitcher from '../../ui/advanced/textglitcher'
 import TextShadow from '../../animations/textshadow'
+import TextSlicer from '../../ui/advanced/textslicer'
 import Header from './header'
 
 const useStyles = makeStyles(theme => ({
@@ -34,18 +35,22 @@ const Home = () => {
             style={{ height: '60%' }}
           >
             <Spacer size={8} />
-            <TextShadow noshadow>
-              <Typography color="primary" variant="h6">
-                Hello! My name is
-              </Typography>
-            </TextShadow>
+            <Grid item style={{ position: 'relative' }}>
+              <TextShadow noshadow>
+                <Typography color="primary" variant="h6">
+                  Hello! My name is
+                </Typography>
+              </TextShadow>
+            </Grid>
             <Header />
             <Spacer size={1} />
-            <TextShadow noshadow>
-              <Typography color="primary" variant="h6">
-                and I am a Javascript developer.
-              </Typography>
-            </TextShadow>
+            <Grid item style={{ position: 'relative' }}>
+              <TextShadow noshadow>
+                <Typography color="primary" variant="h6">
+                  and I am a Javascript developer.
+                </Typography>
+              </TextShadow>
+            </Grid>
           </Grid>
           <Grid
             item

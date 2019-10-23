@@ -29,7 +29,7 @@ const Buttonlink = props => {
           color={props.color ? props.color : 'primary'}
           variant={props.variant ? props.variant : 'h5'}
         >
-          <TextGlitcher isEnabled={props.glitch ? true : false}>
+          <TextGlitcher glitched={props.glitch ? true : false}>
             {props.children}
           </TextGlitcher>
         </Typography>

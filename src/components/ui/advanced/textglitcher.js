@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import TextShadow from '../../animations/textshadow'
 
 const useStyles = makeStyles(theme => ({
   trigger: {
@@ -10,6 +11,9 @@ const useStyles = makeStyles(theme => ({
   },
   glitcher: {
     position: 'relative',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     color: 'inherit',
     fontFamily: 'inherit',
     fontWeight: 'inherit',
@@ -29,7 +33,7 @@ const useStyles = makeStyles(theme => ({
       textShadow: '-1px 0 red',
       animation: `$glitch2 3s infinite ease-out reverse`,
       animationPlayState: styleprops =>
-        styleprops.isEnabled
+        styleprops.glitched
           ? 'running'
           : styleprops.isHovered
           ? 'running'
@@ -49,7 +53,7 @@ const useStyles = makeStyles(theme => ({
       opacity: 1,
       animation: `$glitch 3s infinite ease-out alternate-reverse`,
       animationPlayState: styleprops =>
-        styleprops.isEnabled
+        styleprops.glitched
           ? 'running'
           : styleprops.isHovered
           ? 'running'
@@ -137,25 +141,23 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const TextGlitcher = ({ duration, isEnabled, ...props }) => {
+const TextGlitcher = ({ duration, glitched, ...props }) => {
   const [isHovered, toggleHover] = useState(false)
-  const styleprops = { isHovered, duration, isEnabled }
+  const styleprops = { isHovered, duration, glitched }
   const classes = useStyles(styleprops)
   return (
-    <>
-      <div
-        className={classes.glitcher}
-        {...props}
-        data-text={props.data ? props.data : props.children}
-      >
-        {/* <div
+    <TextShadow
+      className={classes.glitcher}
+      {...props}
+      data-text={props.data ? props.data : props.children}
+    >
+      {/* <div
           className={classes.trigger}
           onMouseOver={() => toggleHover(true)}
           onMouseLeave={() => toggleHover(false)} */}
-        {/* /> */}
-        {props.children}
-      </div>
-    </>
+      {/* /> */}
+      {props.children}
+    </TextShadow>
   )
 }
 

@@ -1,12 +1,18 @@
 import posed from 'react-pose'
 
 const Appear = posed.div({
+  hoverable: true,
   enter: {
-    y: 0,
+    x: 0,
     opacity: 1,
+    scale: 1,
+  },
+  hover: {
+    scale: 1.2,
   },
   exit: {
-    y: 10,
+    x: ({ direction }) =>
+      direction === 'right' ? 200 : direction === 'left' ? -200 : 0,
     opacity: 0,
   },
 })

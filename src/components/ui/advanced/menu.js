@@ -23,6 +23,14 @@ const useStyles = makeStyles({
   },
 })
 
+const content = [
+  { name: 'HOME', to: '/' },
+  { name: 'DESIGN', to: '/design' },
+  { name: 'SKILLS', to: '/skills' },
+  { name: 'ABOUT', to: '/about' },
+  { name: 'THEME', to: '/theme' },
+]
+
 const Menu = props => {
   const classes = useStyles()
   return (
@@ -34,31 +42,15 @@ const Menu = props => {
         alignItems="center"
         spacing={6}
       >
-        <Grid item>
-          <Buttonlink glitch to="/">
-            HOME
-          </Buttonlink>
-        </Grid>
-        <Grid item>
-          <Buttonlink glitch to="/design">
-            DESIGN
-          </Buttonlink>
-        </Grid>
-        <Grid item>
-          <Buttonlink glitch to="/skills">
-            SKILLS
-          </Buttonlink>
-        </Grid>
-        <Grid item>
-          <Buttonlink glitch to="/about">
-            ABOUT
-          </Buttonlink>
-        </Grid>
-        <Grid item>
-          <Buttonlink glitch to="/theme">
-            THEME
-          </Buttonlink>
-        </Grid>
+        {content.map((value, id) => {
+          return (
+            <Grid item key={id}>
+              <Buttonlink glitch id={id} to={value.to}>
+                {value.name}
+              </Buttonlink>
+            </Grid>
+          )
+        })}
         <Grid item />
       </Grid>
     </Container>

@@ -95,7 +95,7 @@ const Background = props => {
   const classes = useStyles()
   return (
     <div className={classes.background}>
-      {/* <Particles params={particles} className={classes.particles} /> */}
+      <Particles params={particles} className={classes.particles} />
       {props.children}
     </div>
   )
