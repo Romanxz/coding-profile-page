@@ -4,6 +4,7 @@ import Selector from './selector'
 import Menulink from '../basic/menulink'
 import FormErrors from './formerrors'
 import { Grid } from '@material-ui/core'
+import Buttonlink from './buttonlink'
 
 export default class Themeform extends React.Component {
   state = {
@@ -75,7 +76,7 @@ export default class Themeform extends React.Component {
   render() {
     const { handleSelector, handleTextfield } = this,
       { Background, Text, isFormEnabled } = this.state,
-      { theme } = this.props
+      { theme, pad } = this.props
     return (
       <Grid
         container
@@ -83,6 +84,7 @@ export default class Themeform extends React.Component {
         justify="center"
         alignItems="center"
         spacing={4}
+        style={{ width: '80%' }}
       >
         <Grid item>
           <Selector onChange={handleSelector} theme={theme} />
@@ -112,7 +114,9 @@ export default class Themeform extends React.Component {
           <FormErrors formErrors={this.state.formErrors} />
         </Grid>
         <Grid item>
-          <Menulink to="/menu" />
+          <Buttonlink key={2131222313} glitch to="/">
+            HOME
+          </Buttonlink>
         </Grid>
       </Grid>
     )

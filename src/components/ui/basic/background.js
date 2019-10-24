@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 var particles = {
   particles: {
     number: {
-      value: 100,
+      value: 120,
       density: { enable: true, value_area: 600 },
     },
     color: { value: '#2dfaa1' },
@@ -74,7 +74,7 @@ var particles = {
     modes: {
       grab: {
         distance: 219.26084732136317,
-        line_linked: { opacity: 0.6087378560910799 },
+        line_linked: { opacity: 0.7087378560910799 },
       },
       bubble: {
         distance: 201,

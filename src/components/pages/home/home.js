@@ -5,9 +5,8 @@ import { Grid, Typography } from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles'
 import { Spacer } from '../../ui/basic/spacer'
 import TextGlitcher from '../../ui/advanced/textglitcher'
-import TextShadow from '../../animations/textshadow'
-import TextSlicer from '../../ui/advanced/textslicer'
 import Header from './header'
+import Divider from '../../ui/basic/divider'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -22,7 +21,7 @@ const Home = () => {
   const classes = useStyles()
   const { container } = classes
   return (
-    <Container className={container}>
+    <Container staggerin={400} className={container}>
       <Grid container direction="row">
         <Grid item xs={7} />
         <Grid item container direction="column" xs={5}>
@@ -34,45 +33,62 @@ const Home = () => {
             alignItems="flex-start"
             style={{ height: '60%' }}
           >
-            <Spacer size={8} />
-            <Grid item style={{ position: 'relative' }}>
-              <TextShadow noshadow>
-                <Typography color="primary" variant="h6">
-                  Hello! My name is
-                </Typography>
-              </TextShadow>
-            </Grid>
+            <Spacer size={20} />
             <Header />
-            <Spacer size={1} />
+            <Spacer size={2} />
+            <Divider height={1} width={300} />
             <Grid item style={{ position: 'relative' }}>
-              <TextShadow noshadow>
-                <Typography color="primary" variant="h6">
-                  and I am a Javascript developer.
-                </Typography>
-              </TextShadow>
+              <Typography color="secondary" variant="button">
+                <TextGlitcher
+                  key={2139493292494}
+                  style={{ cursor: 'crosshair' }}
+                  glitched
+                  noshadow
+                  direction="right"
+                >
+                  {'- Javascript Programmer -'}
+                </TextGlitcher>
+              </Typography>
+            </Grid>
+            <Grid item style={{ position: 'relative' }}>
+              <Typography color="secondary" variant="button">
+                <TextGlitcher
+                  key={213122133133}
+                  style={{ cursor: 'crosshair' }}
+                  glitched
+                  noshadow
+                  direction="right"
+                >
+                  {'- Web Designer -'}
+                </TextGlitcher>
+              </Typography>
             </Grid>
           </Grid>
-          <Grid
-            item
-            container
-            direction="column"
-            justify="center"
-            alignItems="flex-start"
-          >
-            <Container>
-              <Buttonlink glitch to="/skills">
-                MY SKILLS
+          <Container>
+            <Grid
+              item
+              container
+              direction="column"
+              justify="center"
+              alignItems="flex-start"
+            >
+              <Buttonlink key={213123} glitch to="/skills">
+                SKILLS
               </Buttonlink>
               <Spacer size={4} />
-              <Buttonlink glitch to="/about">
-                MY STORY
+              <Buttonlink key={2321313123} glitch to="/about">
+                BIO
               </Buttonlink>
               <Spacer size={4} />
-              <Buttonlink glitch to="/theme">
+              <Buttonlink key={2131237463} glitch to="/theme">
                 THEME
               </Buttonlink>
-            </Container>
-          </Grid>
+              <Spacer size={4} />
+              <Buttonlink key={2131237463} glitch to="/menu">
+                MENU
+              </Buttonlink>
+            </Grid>
+          </Container>
         </Grid>
       </Grid>
     </Container>

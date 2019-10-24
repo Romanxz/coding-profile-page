@@ -29,7 +29,6 @@ const styles = theme => ({
     display: 'flex',
     width: 'inherit',
     height: 'inherit',
-    filter: 'blur(3px)',
     userSelect: 'none',
     background: 'transparent',
     justifyContent: 'center',
@@ -39,27 +38,27 @@ const styles = theme => ({
       content: `""`,
       position: 'absolute',
       boxSizing: 'border-box',
-      zIndex: 2,
-      top: -1,
-      left: -2,
+      zIndex: 1,
+      top: 0,
+      left: 0,
       width: 'inherit',
       height: 'inherit',
-      border: '1px double #0d00ff',
-      opacity: 1,
-      filter: 'saturate(2000%) ',
+      border: `2px inset ${theme.palette.secondary.main}`,
+      opacity: 0.6,
+      filter: 'blur(5px)',
     },
     '&::after': {
       content: `""`,
       position: 'absolute',
       boxSizing: 'border-box',
       zIndex: 1,
-      top: 1,
-      left: 2,
+      top: 0,
+      left: 0,
       width: 'inherit',
       height: 'inherit',
-      border: '1px double #ff0044',
-      opacity: 1,
-      filter: 'saturate(2000%) ',
+      border: `1px double ${theme.palette.secondary.dark}`,
+      opacity: 0.8,
+      filter: 'saturate(2000%)',
     },
   },
 })
@@ -80,7 +79,7 @@ class Button extends React.Component {
   }
 
   render() {
-    let { children, classes, style, disabled, onClick } = this.props
+    let { children, classes, disabled, glowoff, onClick } = this.props
     const { isPressed, isHovered } = this.state
     return (
       <Shadow
@@ -94,7 +93,9 @@ class Button extends React.Component {
       >
         <div
           className={classes.frame}
-          style={{ opacity: isHovered ? 0.8 : 0 }}
+          style={{
+            opacity: glowoff ? 0 : isHovered ? 0.8 : 0,
+          }}
         />
         {children}
       </Shadow>

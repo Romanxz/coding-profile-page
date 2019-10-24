@@ -18,11 +18,12 @@ class App extends React.Component {
     White: {
       ...themeTemplate,
       typography: {
-        fontFamily: 'Jura',
+        fontFamily: 'nidsans, sans-serif',
+        fontSize: 18,
       },
       palette: {
-        primary: { main: '#000000' },
-        secondary: { main: '#d63375' },
+        primary: { main: '#00bd39' },
+        secondary: { main: '#000000' },
       },
       background: '#cafad6',
     },
@@ -30,10 +31,12 @@ class App extends React.Component {
       ...themeTemplate,
       typography: {
         fontFamily: 'Jura',
+        fontSize: 18,
       },
       palette: {
-        primary: { main: '#E2E2E2' },
-        secondary: { main: '#11cb5f' },
+        primary: { main: '#0077ff' },
+        secondary: { main: '#f7fffd' },
+        shadow: '196, 0, 196,',
       },
       // background: '#1C1616',
       background: '#1a1a1f',
@@ -55,6 +58,7 @@ class App extends React.Component {
       ...themeTemplate,
       typography: {
         fontFamily: 'Jura',
+        fontSize: 18,
       },
       palette: {
         primary: { main: '#4a148c' },
@@ -103,7 +107,7 @@ class App extends React.Component {
           <Route
             render={({ location }) => (
               <Background>
-                <PoseGroup animateOnMount>
+                <PoseGroup sha={333} animateOnMount>
                   <RoutesAnimation style={RoutesStyle} key={location.pathname}>
                     <Switch location={location}>
                       <Route

@@ -10,7 +10,7 @@ const TextShadow = posed.div({
     opacity: 1,
     textShadow: ({ noshadow }) =>
       !noshadow
-        ? `14px 14px 28px rgba(${SHADOW_COLOR} 0.22), 3px 10px 10px rgba(${SHADOW_COLOR} 0.19)`
+        ? `8px 8px 8px rgba(${SHADOW_COLOR} 0.18), 4px 4px 8px rgba(${SHADOW_COLOR} 0.15)`
         : `0px 0px 0px rgba(${SHADOW_COLOR} 0.22), 0px 0px 0px rgba(${SHADOW_COLOR} 0.19)`,
   },
   hover: {

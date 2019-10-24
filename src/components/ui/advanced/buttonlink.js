@@ -26,10 +26,10 @@ const Buttonlink = props => {
     <Button style={props.style}>
       <Link className={classes.link} style={props.style} to={props.to}>
         <Typography
-          color={props.color ? props.color : 'primary'}
-          variant={props.variant ? props.variant : 'h5'}
+          color={props.color ? props.color : 'secondary'}
+          variant={props.variant ? props.variant : 'body2'}
         >
-          <TextGlitcher glitched={props.glitch ? true : false}>
+          <TextGlitcher noshadow glitched={props.glitch ? true : false}>
             {props.children}
           </TextGlitcher>
         </Typography>

@@ -15,7 +15,7 @@ export const Spacer = ({ size = 1 }) => {
   const styleprops = { theme, size }
   const classes = useStyle(styleprops)
 
-  return <div style={{ height: theme.spacing(size) }} />
+  return <div className={classes.spacer} />
 }
 
 export default Spacer

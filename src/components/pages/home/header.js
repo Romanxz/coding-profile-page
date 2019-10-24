@@ -27,11 +27,8 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const values1 = { x1: '0px', x2: '4px', x3: '-10px' }
-
 const Header = props => {
   const classes = useStyles()
-  const { header, slicer } = classes
   return (
     <header>
       <Appear direction="left">

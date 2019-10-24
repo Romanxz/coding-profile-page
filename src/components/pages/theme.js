@@ -1,8 +1,12 @@
 import React from 'react'
 import Container from '../animations/container'
 import { makeStyles } from '@material-ui/core/styles'
-import { Grid } from '@material-ui/core/'
+import { Grid, Typography } from '@material-ui/core/'
 import Themeform from '../ui/advanced/themeform'
+import Spacer from '../ui/basic/spacer'
+import Appear from '../animations/appear'
+import TextGlitcher from '../ui/advanced/textglitcher'
+import TextSlicer from '../ui/advanced/textslicer'
 
 const useStyles = makeStyles({
   container: {
@@ -21,16 +25,44 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
   return (
     <Container className={classes.container}>
       <Grid container direction="row">
-        <Grid item lg={4} md={3} sm={2} xs={1} />
-        <Grid item lg={4} md={6} sm={8} xs={10}>
+        <Grid item xs={7} />
+        <Grid item container direction="column" xs={5}>
+          {/* <Spacer size={4} /> */}
+          <Appear direction="left">
+            <TextSlicer>
+              <TextGlitcher
+                style={{ cursor: 'crosshair' }}
+                direction="left"
+                glitched
+                data="THEME"
+              >
+                THEME
+              </TextGlitcher>
+            </TextSlicer>
+          </Appear>
+          <Spacer size={3} />
+          <Grid item style={{ position: 'relative' }}>
+            <Typography color="secondary" variant="button">
+              <TextGlitcher
+                key={21214132364667}
+                style={{ cursor: 'crosshair' }}
+                glitched
+                noshadow
+                direction="right"
+              >
+                {'CHOOSE SOME THEMES OR MAKE ONE WITH CUSTOM HEX VALUES'}
+              </TextGlitcher>
+            </Typography>
+          </Grid>
+          <Spacer size={10} />
           <Themeform
             theme={theme}
             toggleTheme={toggleTheme}
             updateBgColor={updateBgColor}
             updateTextColor={updateTextColor}
+            pad={120}
           />
         </Grid>
-        <Grid item lg={4} md={3} sm={2} xs={1} />
       </Grid>
     </Container>
   )

@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: 'inherit',
     letterSpacing: 'inherit',
     zIndex: 100,
-    filter: 'saturate(2000%)',
+    filter: 'saturate(1000%)',
     '&::before': {
       content: 'attr(data-text)',
       position: 'absolute',
