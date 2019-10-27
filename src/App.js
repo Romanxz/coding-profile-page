@@ -1,6 +1,6 @@
 import React from 'react'
 import { PoseGroup } from 'react-pose'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import { RoutesAnimation, RoutesStyle } from './components/animations/routes'
 import Menu from './components/ui/advanced/menu'
 import Background from './components/ui/basic/background'
@@ -107,7 +107,7 @@ class App extends React.Component {
           <Route
             render={({ location }) => (
               <Background theme={createMuiTheme(this.state[theme])}>
-                <PoseGroup sha={333} animateOnMount>
+                <PoseGroup animateOnMount>
                   <RoutesAnimation style={RoutesStyle} key={location.pathname}>
                     <Switch location={location}>
                       <Route

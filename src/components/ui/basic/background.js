@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Background = ({ theme, ...props }) => {
+const Background = React.memo(({ theme, ...props }) => {
   const classes = useStyles()
   console.log(theme.palette.secondary.main)
   var config = {
@@ -100,6 +100,6 @@ const Background = ({ theme, ...props }) => {
       {props.children}
     </div>
   )
-}
+})
 
 export default Background
