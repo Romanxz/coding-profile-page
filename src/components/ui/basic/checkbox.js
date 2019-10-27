@@ -22,8 +22,8 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 40,
-    width: 40,
+    height: 25,
+    width: 25,
     borderRadius: '50%',
     cursor: 'pointer',
   },
@@ -37,8 +37,8 @@ const styles = theme => ({
     justifyContent: 'center',
     boxSizing: 'border-box',
     transition: 'all 0.4s',
-    height: 40,
-    width: 40,
+    height: 25,
+    width: 25,
     borderRadius: '50%',
     cursor: 'pointer',
     '&::before': {
@@ -74,8 +74,8 @@ const styles = theme => ({
     position: 'relative',
     display: 'flex',
     zIndex: 30,
-    height: 30,
-    width: 30,
+    height: 25,
+    width: 25,
     opacity: 1,
     boxSizing: 'border-box',
     borderRadius: '50%',
@@ -85,14 +85,14 @@ const styles = theme => ({
   },
   name: {
     position: 'absolute',
-    left: 50,
+    left: 35,
     background: 'transparent',
   },
   wrapper: {
     position: 'relative',
     display: 'flex',
-    height: 30,
-    width: 110,
+    height: 25,
+    width: 120,
     userSelect: 'none',
   },
 })
@@ -144,7 +144,7 @@ class Checkbox extends React.Component {
           >
             <div
               className={checkmark}
-              style={{ width: checked ? 40 : 0, height: checked ? 40 : 0 }}
+              style={{ width: checked ? 25 : 0, height: checked ? 25 : 0 }}
             />
             <input
               name={this.props.name}

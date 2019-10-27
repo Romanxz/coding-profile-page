@@ -1,7 +1,6 @@
 import React from 'react'
 import Textfield from '../basic/textfield'
 import Selector from './selector'
-import Menulink from '../basic/menulink'
 import FormErrors from './formerrors'
 import { Grid } from '@material-ui/core'
 import Buttonlink from './buttonlink'
@@ -14,6 +13,7 @@ export default class Themeform extends React.Component {
     isBackgroundValid: false,
     isTextValid: false,
     isFormEnabled: false,
+    isFormValid: false,
   }
 
   handleSelector = event => {
@@ -63,6 +63,7 @@ export default class Themeform extends React.Component {
         formErrors: fieldValidationErrors,
         isBackgroundValid: isBackgroundValid,
         isTextValid: isTextValid,
+        isFormValid: isBackgroundValid && isTextValid,
       },
       this.updateTheme(isBackgroundValid, isTextValid)
     )
@@ -75,22 +76,23 @@ export default class Themeform extends React.Component {
 
   render() {
     const { handleSelector, handleTextfield } = this,
-      { Background, Text, isFormEnabled } = this.state,
-      { theme, pad } = this.props
+      { Background, Text, isFormEnabled, isFormValid } = this.state,
+      { theme, mdUp } = this.props
     return (
       <Grid
         container
         direction="column"
-        justify="center"
-        alignItems="center"
-        spacing={4}
-        style={{ width: '80%' }}
+        justify="flex-start"
+        alignItems={mdUp ? 'flex-start' : 'center'}
+        spacing={2}
+        style={{ width: '100%' }}
       >
         <Grid item>
           <Selector onChange={handleSelector} theme={theme} />
         </Grid>
-        <Grid item container>
+        <Grid item style={{ width: '100%' }}>
           <Textfield
+            key={10}
             onChange={handleTextfield}
             value={Background}
             type="text"
@@ -101,23 +103,26 @@ export default class Themeform extends React.Component {
             }}
           />
         </Grid>
-        <Grid item container>
+        <Grid item style={{ width: '100%' }}>
           <Textfield
+            key={11}
             onChange={handleTextfield}
             value={Text}
             type="text"
-            name="Text"
+            name="Primary color"
             disabled={!isFormEnabled}
           />
         </Grid>
-        <Grid item container>
-          <FormErrors formErrors={this.state.formErrors} />
-        </Grid>
         <Grid item>
-          <Buttonlink key={2131222313} glitch to="/">
+          <Buttonlink key={33} glitch to="/">
             HOME
           </Buttonlink>
         </Grid>
+        {!isFormValid ? (
+          <Grid item container>
+            <FormErrors formErrors={this.state.formErrors} />
+          </Grid>
+        ) : null}
       </Grid>
     )
   }

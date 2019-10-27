@@ -13,6 +13,8 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     flexDirection: 'column',
     justifyContent: 'center',
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
     color: 'inherit',
     fontFamily: 'inherit',

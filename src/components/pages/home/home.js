@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../../animations/container'
 import Buttonlink from '../../ui/advanced/buttonlink'
-import { Grid, Typography } from '@material-ui/core/'
+import { Grid, Typography, Hidden } from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles'
 import { Spacer } from '../../ui/basic/spacer'
 import TextGlitcher from '../../ui/advanced/textglitcher'
@@ -21,10 +21,21 @@ const Home = () => {
   const classes = useStyles()
   const { container } = classes
   return (
-    <Container staggerin={400} className={container}>
-      <Grid container direction="row">
-        <Grid item xs={7} />
-        <Grid item container direction="column" xs={5}>
+    <Container className={container}>
+      <Grid container direction="row" spacing={2}>
+        <Hidden mdDown>
+          <Grid item md={6} lg={6} />
+        </Hidden>
+        <Grid
+          item
+          container
+          direction="column"
+          style={{ paddingLeft: '10%' }}
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+        >
           <Grid
             item
             container
@@ -33,14 +44,16 @@ const Home = () => {
             alignItems="flex-start"
             style={{ height: '60%' }}
           >
-            <Spacer size={20} />
+            <Hidden smDown>
+              <Spacer size={20} />
+            </Hidden>
             <Header />
             <Spacer size={2} />
             <Divider height={1} width={300} />
             <Grid item style={{ position: 'relative' }}>
               <Typography color="secondary" variant="button">
                 <TextGlitcher
-                  key={2139493292494}
+                  key={84}
                   style={{ cursor: 'crosshair' }}
                   glitched
                   noshadow
@@ -53,7 +66,7 @@ const Home = () => {
             <Grid item style={{ position: 'relative' }}>
               <Typography color="secondary" variant="button">
                 <TextGlitcher
-                  key={213122133133}
+                  key={56}
                   style={{ cursor: 'crosshair' }}
                   glitched
                   noshadow
@@ -64,31 +77,29 @@ const Home = () => {
               </Typography>
             </Grid>
           </Grid>
-          <Container>
-            <Grid
-              item
-              container
-              direction="column"
-              justify="center"
-              alignItems="flex-start"
-            >
-              <Buttonlink key={213123} glitch to="/skills">
-                SKILLS
-              </Buttonlink>
-              <Spacer size={4} />
-              <Buttonlink key={2321313123} glitch to="/about">
-                BIO
-              </Buttonlink>
-              <Spacer size={4} />
-              <Buttonlink key={2131237463} glitch to="/theme">
-                THEME
-              </Buttonlink>
-              <Spacer size={4} />
-              <Buttonlink key={2131237463} glitch to="/menu">
-                MENU
-              </Buttonlink>
-            </Grid>
-          </Container>
+          <Grid
+            item
+            container
+            direction="column"
+            justify="center"
+            alignItems="flex-start"
+          >
+            <Buttonlink key={132} glitch to="/skills">
+              SKILLS
+            </Buttonlink>
+            <Spacer size={3} />
+            <Buttonlink key={63} glitch to="/about">
+              BIO
+            </Buttonlink>
+            <Spacer size={3} />
+            <Buttonlink key={67} glitch to="/theme">
+              THEME
+            </Buttonlink>
+            <Spacer size={3} />
+            <Buttonlink key={68} glitch to="/menu">
+              MENU
+            </Buttonlink>
+          </Grid>
         </Grid>
       </Grid>
     </Container>

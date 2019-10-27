@@ -21,6 +21,7 @@ const styles = theme => ({
     boxSizing: 'border-box',
     height: 65,
     width: '100%',
+    maxWidth: 400,
   },
   frame: {
     position: 'relative',
@@ -29,6 +30,7 @@ const styles = theme => ({
     background: 'transparent',
     border: '1px solid black',
     borderRadius: 8,
+    maxWidth: 400,
     '&::before': {
       content: `""`,
       position: 'absolute',
@@ -39,7 +41,7 @@ const styles = theme => ({
       width: 'inherit',
       height: 'inherit',
       border: `2px inset ${theme.palette.secondary.main}`,
-      borderRadius: 8,
+      // borderRadius: 8,
       opacity: 0.6,
       filter: 'blur(5px)',
     },
@@ -53,7 +55,7 @@ const styles = theme => ({
       width: 'inherit',
       height: 'inherit',
       border: `1px double ${theme.palette.secondary.dark}`,
-      borderRadius: 8,
+      // borderRadius: 8,
       opacity: 0.8,
       filter: 'saturate(2000%)',
     },
@@ -65,7 +67,7 @@ const styles = theme => ({
     width: '100%',
     border: 'none',
     boxSizing: 'border-box',
-    borderRadius: 8,
+    // borderRadius: 8,
     background: 'transparent',
     fontFamily: 'Jura',
     fontWeight: 500,
@@ -73,6 +75,7 @@ const styles = theme => ({
     color: theme.palette.secondary.dark,
     outline: 'none',
     letterSpacing: 0,
+    maxWidth: 400,
   },
 })
 
@@ -103,12 +106,18 @@ class Textfield extends React.Component {
       { isSelected, isHovered } = this.state,
       { input, label, frame, wrapper } = this.props.classes
     return (
-      <Shadow className={wrapper} style={style} nopress>
+      <Shadow
+        className={wrapper}
+        style={style}
+        onMouseMove={toggleHover}
+        onMouseLeave={closeHover}
+        nopress
+      >
         <Typography
           color="secondary"
           variant="body1"
           className={label}
-          style={{ top: isSelected ? -4 : 28 }}
+          style={{ top: isSelected ? -4 : 30 }}
         >
           <TextGlitcher style={{ cursor: 'crosshair' }} glitched noshadow>
             {name}
@@ -120,17 +129,15 @@ class Textfield extends React.Component {
           name={name}
           type={type ? type : 'text'}
           disabled={disabled}
-          onChange={onChange}
+          onChange={disabled ? null : onChange}
           onSelect={enableFocus}
           onBlur={disableFocus}
-          onMouseMove={toggleHover}
-          onMouseLeave={closeHover}
           autoComplete="off"
           ref={r => (this.ref = r)}
         />
         <div
           className={frame}
-          style={{ opacity: isSelected ? 1 : isHovered ? 1 : 0 }}
+          style={{ opacity: isSelected ? 1 : isHovered ? 0.8 : 0 }}
         />
       </Shadow>
     )

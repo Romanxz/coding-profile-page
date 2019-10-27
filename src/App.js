@@ -22,10 +22,11 @@ class App extends React.Component {
         fontSize: 18,
       },
       palette: {
-        primary: { main: '#00bd39' },
-        secondary: { main: '#000000' },
+        primary: { main: '#ff3838' },
+        secondary: { main: '#ffffff' },
       },
-      background: '#cafad6',
+      background:
+        'radial-gradient(circle, rgba(214,64,255,1) 0%, rgba(0,236,255,1) 67%, rgba(238,0,153,1) 100%)',
     },
     Black: {
       ...themeTemplate,
@@ -48,11 +49,11 @@ class App extends React.Component {
         fontFamily: 'Jura',
       },
       palette: {
-        primary: { main: '#4a148c' },
-        secondary: { main: '#11cb5f' },
+        primary: { main: '#11cb5f' },
+        secondary: { main: '#4a148c' },
       },
       background:
-        'linear-gradient(160deg,#1bff98,#00d5d9,#00a2ea,#2c69bd,#504d9f,#5e2f7c,#5f0856)',
+        'radial-gradient(circle, rgba(213,255,80,1) 9%, rgba(0,236,255,1) 62%, rgba(255,0,164,1) 84%)',
     },
     Custom: {
       ...themeTemplate,
@@ -61,11 +62,10 @@ class App extends React.Component {
         fontSize: 18,
       },
       palette: {
-        primary: { main: '#4a148c' },
-        secondary: { main: '#11cb5f' },
+        primary: { main: '#ffffff' },
+        secondary: { main: '#000000' },
       },
-      background: '#1a1a1f',
-      shadow: '196, 0, 196,',
+      background: '#54ffdd',
     },
     theme: 'Black',
   }
@@ -106,7 +106,7 @@ class App extends React.Component {
         >
           <Route
             render={({ location }) => (
-              <Background>
+              <Background theme={createMuiTheme(this.state[theme])}>
                 <PoseGroup sha={333} animateOnMount>
                   <RoutesAnimation style={RoutesStyle} key={location.pathname}>
                     <Switch location={location}>
