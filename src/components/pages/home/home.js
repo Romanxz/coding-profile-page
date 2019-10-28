@@ -1,8 +1,8 @@
 import React from 'react'
 import Container from '../../animations/container'
 import Buttonlink from '../../ui/advanced/buttonlink'
-import { Grid, Typography, Hidden } from '@material-ui/core/'
-import { makeStyles } from '@material-ui/core/styles'
+import { Grid, Typography, Hidden, useMediaQuery } from '@material-ui/core/'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { Spacer } from '../../ui/basic/spacer'
 import TextGlitcher from '../../ui/advanced/textglitcher'
 import Header from './header'
@@ -20,36 +20,27 @@ const useStyles = makeStyles(theme => ({
 const Home = () => {
   const classes = useStyles()
   const { container } = classes
+  const theme = useTheme()
+  const mdUp = useMediaQuery(theme.breakpoints.up('md'))
   return (
     <Container className={container}>
       <Grid container direction="row" spacing={2}>
-        <Hidden mdDown>
+        <Hidden smDown>
           <Grid item md={6} lg={6} />
         </Hidden>
-        <Grid
-          item
-          container
-          direction="column"
-          style={{ paddingLeft: '10%' }}
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-        >
+        <Grid item container direction="column" xs={12} sm={12} md={6} lg={6}>
           <Grid
             item
             container
             direction="column"
             justify="flex-start"
-            alignItems="flex-start"
-            style={{ height: '60%' }}
+            alignItems={mdUp ? 'flex-start' : 'center'}
+            style={{ height: '50%' }}
           >
-            <Hidden smDown>
-              <Spacer size={20} />
-            </Hidden>
+            <Spacer size={mdUp ? 20 : 10} />
             <Header />
+            {/* <Divider height={1} width={300} /> */}
             <Spacer size={2} />
-            <Divider height={1} width={300} />
             <Grid item style={{ position: 'relative' }}>
               <Typography color="secondary" variant="button">
                 <TextGlitcher
@@ -82,7 +73,7 @@ const Home = () => {
             container
             direction="column"
             justify="center"
-            alignItems="flex-start"
+            alignItems={mdUp ? 'flex-start' : 'center'}
           >
             <Buttonlink key={132} glitch to="/skills">
               SKILLS

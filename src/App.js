@@ -1,6 +1,6 @@
 import React from 'react'
 import { PoseGroup } from 'react-pose'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { RoutesAnimation, RoutesStyle } from './components/animations/routes'
 import Menu from './components/ui/advanced/menu'
 import Background from './components/ui/basic/background'
@@ -100,7 +100,7 @@ class App extends React.Component {
     const { theme } = this.state
     console.log(createMuiTheme(this.state[theme]))
     return (
-      <Router>
+      <Router basename="/coding-profile-page">
         <ThemeProvider
           theme={responsiveFontSizes(createMuiTheme(this.state[theme]))}
         >
@@ -110,27 +110,11 @@ class App extends React.Component {
                 <PoseGroup animateOnMount>
                   <RoutesAnimation style={RoutesStyle} key={location.pathname}>
                     <Switch location={location}>
-                      <Route
-                        path={process.env.PUBLIC_URL + '/'}
-                        exact
-                        component={Home}
-                      />
-                      <Route
-                        path={process.env.PUBLIC_URL + '/menu'}
-                        component={Menu}
-                      />
-                      <Route
-                        path={process.env.PUBLIC_URL + '/design'}
-                        component={Design}
-                      />
-                      <Route
-                        path={process.env.PUBLIC_URL + '/skills'}
-                        component={Skills}
-                      />
-                      <Route
-                        path={process.env.PUBLIC_URL + '/about'}
-                        component={About}
-                      />
+                      <Route path="/" exact component={Home} />
+                      <Route path="/menu" component={Menu} />
+                      <Route path="/design" component={Design} />
+                      <Route path="/skills" component={Skills} />
+                      <Route path="/about" component={About} />
                       <Route
                         path="/theme"
                         render={({ props }) => (

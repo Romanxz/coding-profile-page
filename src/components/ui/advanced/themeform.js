@@ -90,7 +90,12 @@ export default class Themeform extends React.Component {
         <Grid item>
           <Selector onChange={handleSelector} theme={theme} />
         </Grid>
-        <Grid item style={{ width: '100%' }}>
+        <Grid
+          item
+          container
+          justify={mdUp ? 'flex-start' : 'center'}
+          style={{ width: '100%' }}
+        >
           <Textfield
             key={10}
             onChange={handleTextfield}
@@ -103,13 +108,18 @@ export default class Themeform extends React.Component {
             }}
           />
         </Grid>
-        <Grid item style={{ width: '100%' }}>
+        <Grid
+          item
+          container
+          justify={mdUp ? 'flex-start' : 'center'}
+          style={{ width: '100%' }}
+        >
           <Textfield
             key={11}
             onChange={handleTextfield}
             value={Text}
             type="text"
-            name="Primary color"
+            name="Text"
             disabled={!isFormEnabled}
           />
         </Grid>

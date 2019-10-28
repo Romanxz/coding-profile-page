@@ -102,11 +102,12 @@ class Textfield extends React.Component {
 
   render() {
     const { enableFocus, disableFocus, toggleHover, closeHover } = this,
-      { name, type, style, disabled, onChange } = this.props,
+      { name, type, style, disabled, onChange, key } = this.props,
       { isSelected, isHovered } = this.state,
       { input, label, frame, wrapper } = this.props.classes
     return (
       <Shadow
+        key={key}
         className={wrapper}
         style={style}
         onMouseMove={toggleHover}

@@ -23,12 +23,8 @@ const useStyles = makeStyles(theme => ({
 const Buttonlink = props => {
   const classes = useStyles()
   return (
-    <Button style={props.style}>
-      <Link
-        className={classes.link}
-        style={props.style}
-        to={`${process.env.PUBLIC_URL}${props.to}`}
-      >
+    <Button style={props.style} key={props.key}>
+      <Link className={classes.link} style={props.style} to={props.to}>
         <Typography
           color={props.color ? props.color : 'secondary'}
           variant={props.variant ? props.variant : 'body2'}

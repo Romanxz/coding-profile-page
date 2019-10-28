@@ -22,18 +22,18 @@ const useStyles = makeStyles({
 const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
   const classes = useStyles()
   const theme2 = useTheme()
-  const mdUp = useMediaQuery(theme2.breakpoints.up('lg'))
+  const mdUp = useMediaQuery(theme2.breakpoints.up('md'))
   return (
     <Container className={classes.container}>
       <Grid container direction="row">
-        <Hidden mdDown>
+        <Hidden smDown>
           <Grid item md={6} lg={6} />
         </Hidden>
         <Grid
           item
           container
           direction="column"
-          justify="center"
+          style={{ width: '100%' }}
           xs={12}
           sm={12}
           md={6}
@@ -47,13 +47,15 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             alignItems={mdUp ? 'flex-start' : 'center'}
             style={{ height: '50%' }}
           >
-            <Hidden smDown>
-              <Spacer size={10} />
-            </Hidden>
-            <Hidden mdUp>
-              <Spacer size={8} />
-            </Hidden>
-            <Appear direction="left" style={{ position: 'relative' }}>
+            <Spacer size={mdUp ? 20 : 10} />
+            <Appear
+              direction="left"
+              style={{
+                position: 'relative',
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
               <TextSlicer>
                 <TextGlitcher
                   style={{ cursor: 'crosshair' }}
@@ -65,7 +67,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
                 </TextGlitcher>
               </TextSlicer>
             </Appear>
-            <Spacer size={3} />
+            <Spacer size={2} />
             <Typography color="secondary" variant="button">
               <TextGlitcher
                 key={45}
