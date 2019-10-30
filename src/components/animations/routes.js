@@ -7,6 +7,7 @@ export const RoutesAnimation = posed.div({
     beforeChildren: true,
   },
   exit: {
+    delay: 200,
     opacity: 0,
   },
 })

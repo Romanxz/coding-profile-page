@@ -38,7 +38,7 @@ const Home = () => {
             alignItems={mdUp ? 'flex-start' : 'center'}
             style={{ height: '50%' }}
           >
-            <Spacer size={mdUp ? 20 : 10} />
+            <Spacer size={mdUp ? 10 : 2} />
             <TextFX
               appear="left"
               glitch

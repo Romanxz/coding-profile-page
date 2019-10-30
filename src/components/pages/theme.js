@@ -46,7 +46,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             alignItems={mdUp ? 'flex-start' : 'center'}
             style={{ height: '50%' }}
           >
-            <Spacer size={mdUp ? 20 : 10} />
+            <Spacer size={mdUp ? 10 : 2} />
             <TextFX
               appear="left"
               glitch
@@ -88,7 +88,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
                 textTransform: 'uppercase',
               }}
             >
-              {'- MAKE SOME WITH CUSTOM HEX CODE -'}
+              {'- CREATE A NEW ONE WITH CUSTOM HEX CODE -'}
             </TextFX>
           </Grid>
           <Themeform
