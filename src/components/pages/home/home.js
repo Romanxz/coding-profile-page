@@ -7,6 +7,7 @@ import { Spacer } from '../../ui/basic/spacer'
 import TextGlitcher from '../../ui/advanced/textglitcher'
 import Header from './header'
 import Divider from '../../ui/basic/divider'
+import TextFX from '../../ui/advanced/text-fx/text-fx'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -38,35 +39,64 @@ const Home = () => {
             style={{ height: '50%' }}
           >
             <Spacer size={mdUp ? 20 : 10} />
-            <Header />
-            {/* <Divider height={1} width={300} /> */}
+            <TextFX
+              appear="left"
+              glitch
+              slice
+              shadow
+              size={90}
+              style={{
+                fontFamily: 'Raleway, sans-serif',
+                fontWeight: 900,
+                letterSpacing: -5,
+                textTransform: 'uppercase',
+              }}
+            >
+              ROMAN
+            </TextFX>
+            <TextFX
+              appear="right"
+              glitch
+              slice
+              shadow
+              size={90}
+              style={{
+                fontFamily: 'Raleway, sans-serif',
+                fontWeight: 900,
+                letterSpacing: -5,
+                textTransform: 'uppercase',
+              }}
+            >
+              GORBUNOV
+            </TextFX>
+            <Spacer size={4} />
+            <TextFX
+              appear="left"
+              glitch
+              size={18}
+              style={{
+                fontFamily: 'Jura',
+                fontWeight: 400,
+                letterSpacing: 0,
+                textTransform: 'uppercase',
+              }}
+            >
+              {'- Javascript Programmer -'}
+            </TextFX>
             <Spacer size={2} />
-            <Grid item style={{ position: 'relative' }}>
-              <Typography color="secondary" variant="button">
-                <TextGlitcher
-                  key={84}
-                  style={{ cursor: 'crosshair' }}
-                  glitched
-                  noshadow
-                  direction="right"
-                >
-                  {'- Javascript Programmer -'}
-                </TextGlitcher>
-              </Typography>
-            </Grid>
-            <Grid item style={{ position: 'relative' }}>
-              <Typography color="secondary" variant="button">
-                <TextGlitcher
-                  key={56}
-                  style={{ cursor: 'crosshair' }}
-                  glitched
-                  noshadow
-                  direction="right"
-                >
-                  {'- Web Designer -'}
-                </TextGlitcher>
-              </Typography>
-            </Grid>
+            <TextFX
+              appear="right"
+              glitch
+              size={18}
+              style={{
+                fontFamily: 'Jura',
+                fontWeight: 400,
+                letterSpacing: 0,
+                textTransform: 'uppercase',
+              }}
+            >
+              {'- Web Designer -'}
+            </TextFX>
           </Grid>
           <Grid
             item

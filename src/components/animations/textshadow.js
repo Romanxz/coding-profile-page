@@ -2,8 +2,6 @@ import posed from 'react-pose'
 import { SHADOW_COLOR } from './shadow'
 
 const TextShadow = posed.div({
-  // hoverable: ({ split }) => (split ? true : false),
-  hoverable: true,
   enter: {
     left: 0,
     scale: 1,
@@ -12,18 +10,6 @@ const TextShadow = posed.div({
       !noshadow
         ? `8px 8px 8px rgba(${SHADOW_COLOR} 0.18), 4px 4px 8px rgba(${SHADOW_COLOR} 0.15)`
         : `0px 0px 0px rgba(${SHADOW_COLOR} 0.22), 0px 0px 0px rgba(${SHADOW_COLOR} 0.19)`,
-  },
-  hover: {
-    left: 0,
-    // scale: ({ xover }) => (xover ? 1.1 : 1),
-    // transition: {
-    //   type: 'keyframes',
-    //   values: [10, 1, -8],
-    //   times: [0, 0.5, 1],
-    //   ease: 'linear',
-    //   duration: 1000,
-    //   loop: 'infinity',
-    // },
   },
   exit: {
     left: ({ direction }) =>

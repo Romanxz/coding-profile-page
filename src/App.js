@@ -18,7 +18,16 @@ class App extends React.Component {
     White: {
       ...themeTemplate,
       typography: {
-        fontFamily: 'nidsans, sans-serif',
+        fontFamily: [
+          'Jura',
+          'typeface-orbitron',
+          'Raleway',
+          'SF',
+          'marske',
+          'vgr',
+          'nidsans',
+          'sans-serif',
+        ].join(','),
         fontSize: 18,
       },
       palette: {
@@ -31,17 +40,22 @@ class App extends React.Component {
     Black: {
       ...themeTemplate,
       typography: {
-        fontFamily: 'Jura',
+        fontFamily: [
+          'Jura',
+          'typeface-orbitron',
+          'Raleway',
+          'SF',
+          'marske',
+          'vgr',
+        ].join(','),
         fontSize: 18,
       },
       palette: {
         primary: { main: '#0077ff' },
         secondary: { main: '#f7fffd' },
-        shadow: '196, 0, 196,',
+        shadow: 'rgba(0, 62, 138, 0.2)',
       },
-      // background: '#1C1616',
       background: '#1a1a1f',
-      shadow: '196, 0, 196,',
     },
     Gradient: {
       ...themeTemplate,
@@ -58,7 +72,14 @@ class App extends React.Component {
     Custom: {
       ...themeTemplate,
       typography: {
-        fontFamily: 'Jura',
+        fontFamily: [
+          'Jura',
+          'typeface-orbitron',
+          'Raleway',
+          'SF',
+          'marske',
+          'vgr',
+        ].join(','),
         fontSize: 18,
       },
       palette: {

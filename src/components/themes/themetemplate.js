@@ -3,9 +3,26 @@ import 'typeface-orbitron'
 
 const themeTemplate = createMuiTheme({
   typography: {
-    fontFamily: 'Jura',
+    fontFamily: [
+      'Jura',
+      'typeface-orbitron',
+      'Raleway',
+      'Raleway, sans-serif',
+      'SF',
+      'marske',
+      'vgr',
+    ].join(','),
     button: {
+      fontFamily: 'Jura',
       fontWeight: 500,
+      fontSize: '1rem',
+      lineHeight: 1.75,
+      letterSpacing: '0.02857em',
+      textTransform: 'uppercase',
+    },
+    h1: {
+      fontFamily: 'Raleway, sans-serif',
+      fontWeight: 900,
       fontSize: '1rem',
       lineHeight: 1.75,
       letterSpacing: '0.02857em',
