@@ -14,6 +14,18 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: props => props.size,
     fontSize: props => props.size,
+    [theme.breakpoints.only('md')]: {
+      height: props => `calc(${props.size}px/100*80)`,
+      fontSize: props => `calc(${props.size}px/100*80)`,
+    },
+    [theme.breakpoints.only('sm')]: {
+      height: props => `calc(${props.size}px/100*70)`,
+      fontSize: props => `calc(${props.size}px/100*70)`,
+    },
+    [theme.breakpoints.only('xs')]: {
+      height: props => `calc(${props.size}px/100*55)`,
+      fontSize: props => `calc(${props.size}px/100*55)`,
+    },
     whiteSpace: 'nowrap',
     color: theme.palette.secondary.main,
     zIndex: 100,

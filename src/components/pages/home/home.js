@@ -1,11 +1,9 @@
 import React from 'react'
 import Container from '../../animations/container'
 import Buttonlink from '../../ui/advanced/buttonlink'
-import { Grid, Typography, Hidden, useMediaQuery } from '@material-ui/core/'
+import { Grid, Hidden, useMediaQuery } from '@material-ui/core/'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { Spacer } from '../../ui/basic/spacer'
-import TextGlitcher from '../../ui/advanced/textglitcher'
-import Header from './header'
 import Divider from '../../ui/basic/divider'
 import TextFX from '../../ui/advanced/text-fx/text-fx'
 
@@ -36,7 +34,10 @@ const Home = () => {
             direction="column"
             justify="flex-start"
             alignItems={mdUp ? 'flex-start' : 'center'}
-            style={{ height: '50%' }}
+            style={{
+              minHeight: '50%',
+              height: 'max-content',
+            }}
           >
             <Spacer size={mdUp ? 10 : 2} />
             <TextFX
@@ -69,11 +70,11 @@ const Home = () => {
             >
               GORBUNOV
             </TextFX>
-            <Spacer size={4} />
+            <Spacer size={mdUp ? 4 : 2} />
             <TextFX
               appear="left"
               glitch
-              size={18}
+              size={20}
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,
@@ -87,7 +88,7 @@ const Home = () => {
             <TextFX
               appear="right"
               glitch
-              size={18}
+              size={20}
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,
@@ -104,6 +105,11 @@ const Home = () => {
             direction="column"
             justify="center"
             alignItems={mdUp ? 'flex-start' : 'center'}
+            style={{
+              minHeight: '30%',
+              maxHeight: '50%',
+              height: 'min-content',
+            }}
           >
             <Buttonlink key={132} glitch to="/skills">
               SKILLS

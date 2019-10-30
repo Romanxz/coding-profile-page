@@ -22,6 +22,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
   const classes = useStyles()
   const theme2 = useTheme()
   const mdUp = useMediaQuery(theme2.breakpoints.up('md'))
+  const orientation = useMediaQuery('(orientation: portrait)')
   return (
     <Container className={classes.container}>
       <Grid container direction="row">
@@ -44,7 +45,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             direction="column"
             justify="flex-start"
             alignItems={mdUp ? 'flex-start' : 'center'}
-            style={{ height: '50%' }}
+            style={{ minHeight: '30%', maxHeight: '50%' }}
           >
             <Spacer size={mdUp ? 10 : 2} />
             <TextFX
@@ -66,7 +67,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             <TextFX
               appear="left"
               glitch
-              size={18}
+              size={20}
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,
@@ -80,7 +81,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             <TextFX
               appear="right"
               glitch
-              size={18}
+              size={20}
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,

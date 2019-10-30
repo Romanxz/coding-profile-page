@@ -21,7 +21,7 @@ const styles = theme => ({
     boxSizing: 'border-box',
     height: 65,
     width: '100%',
-    maxWidth: 400,
+    maxWidth: 300,
   },
   frame: {
     position: 'relative',
@@ -30,7 +30,7 @@ const styles = theme => ({
     background: 'transparent',
     border: '1px solid black',
     borderRadius: 8,
-    maxWidth: 400,
+    maxWidth: 300,
     '&::before': {
       content: `""`,
       position: 'absolute',
@@ -75,7 +75,7 @@ const styles = theme => ({
     color: theme.palette.secondary.dark,
     outline: 'none',
     letterSpacing: 0,
-    maxWidth: 400,
+    maxWidth: 300,
   },
 })
 
