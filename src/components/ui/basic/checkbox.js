@@ -1,8 +1,7 @@
 import React from 'react'
 import Shadow from '../../animations/shadow'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
-import TextGlitcher from '../advanced/textglitcher'
+import TextFX from '../advanced/text-fx/text-fx'
 
 const styles = theme => ({
   hiddencheckbox: {
@@ -85,13 +84,14 @@ const styles = theme => ({
   },
   name: {
     position: 'absolute',
-    left: 35,
+    left: 30,
+    width: 80,
     background: 'transparent',
   },
   wrapper: {
     position: 'relative',
     display: 'flex',
-    height: 25,
+    height: 30,
     width: 120,
     userSelect: 'none',
   },
@@ -130,11 +130,21 @@ class Checkbox extends React.Component {
           className={actualcheckbox}
           style={style}
         >
-          <Typography color="secondary" variant="overline" className={name}>
-            <TextGlitcher style={{ cursor: 'pointer' }} glitched noshadow>
+          <div className={name}>
+            <TextFX
+              flexstart
+              glitch
+              size={16}
+              style={{
+                fontFamily: 'Jura',
+                fontWeight: 400,
+                letterSpacing: 0,
+                textTransform: 'uppercase',
+              }}
+            >
               {this.props.name}
-            </TextGlitcher>
-          </Typography>
+            </TextFX>
+          </div>
           <label
             className={actualcheckbox}
             onMouseDown={this.togglePress}

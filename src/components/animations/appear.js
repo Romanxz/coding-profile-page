@@ -9,7 +9,7 @@ const Appear = posed.div({
     duration: 400,
   },
   hover: {
-    scale: 1.2,
+    scale: 1.1,
   },
   exit: {
     left: ({ direction }) =>

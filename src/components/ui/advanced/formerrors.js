@@ -1,24 +1,27 @@
 import React from 'react'
-import { Typography } from '@material-ui/core'
-import TextGlitcher from './textglitcher'
+import TextFX from './text-fx/text-fx'
 
 const FormErrors = ({ formErrors }) => (
   <div className="formErrors">
     {Object.keys(formErrors).map((fieldName, i) => {
       if (formErrors[fieldName].length > 0) {
         return (
-          <Typography key={i} color="error" variant="button">
-            <TextGlitcher
-              key={i}
-              style={{ cursor: 'crosshair' }}
-              glitched
-              noshadow
-              direction="right"
-              data={`${fieldName} ${formErrors[fieldName]}`}
+          <div style={{ position: 'absolute', height: 18, width: '100%' }}>
+            <TextFX
+              glitch
+              break
+              size={18}
+              style={{
+                fontFamily: 'Jura',
+                color: 'red',
+                fontWeight: 400,
+                letterSpacing: 0,
+                textTransform: 'uppercase',
+              }}
             >
               {fieldName} {formErrors[fieldName]}
-            </TextGlitcher>
-          </Typography>
+            </TextFX>
+          </div>
         )
       } else {
         return ''

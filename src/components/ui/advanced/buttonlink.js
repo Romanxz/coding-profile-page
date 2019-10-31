@@ -2,8 +2,7 @@ import React from 'react'
 import Button from '../basic/button'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
-import TextGlitcher from './textglitcher'
+import TextFX from './text-fx/text-fx'
 
 const useStyles = makeStyles(theme => ({
   link: {
@@ -25,14 +24,18 @@ const Buttonlink = props => {
   return (
     <Button style={props.style} key={props.key}>
       <Link className={classes.link} style={props.style} to={props.to}>
-        <Typography
-          color={props.color ? props.color : 'secondary'}
-          variant={props.variant ? props.variant : 'body2'}
+        <TextFX
+          glitch
+          size={18}
+          style={{
+            fontFamily: 'Jura',
+            fontWeight: 400,
+            letterSpacing: 0,
+            textTransform: 'uppercase',
+          }}
         >
-          <TextGlitcher noshadow glitched={props.glitch ? true : false}>
-            {props.children}
-          </TextGlitcher>
-        </Typography>
+          {props.children}
+        </TextFX>
       </Link>
     </Button>
   )

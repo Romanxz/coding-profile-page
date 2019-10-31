@@ -32,7 +32,7 @@ class App extends React.Component {
       },
       palette: {
         primary: { main: '#ff3838' },
-        secondary: { main: '#ffffff' },
+        secondary: { main: '#000000' },
       },
       background:
         'radial-gradient(circle, rgba(214,64,255,1) 0%, rgba(0,236,255,1) 67%, rgba(238,0,153,1) 100%)',

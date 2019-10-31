@@ -14,7 +14,6 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     height: '100%',
     width: '100%',
-    // paddingTop: 20,
   },
 })
 
@@ -22,7 +21,6 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
   const classes = useStyles()
   const theme2 = useTheme()
   const mdUp = useMediaQuery(theme2.breakpoints.up('md'))
-  const orientation = useMediaQuery('(orientation: portrait)')
   return (
     <Container className={classes.container}>
       <Grid container direction="row">
@@ -45,7 +43,9 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             direction="column"
             justify="flex-start"
             alignItems={mdUp ? 'flex-start' : 'center'}
-            style={{ minHeight: '30%', maxHeight: '50%' }}
+            style={{
+              minHeight: mdUp ? '50%' : '40%',
+            }}
           >
             <Spacer size={mdUp ? 10 : 2} />
             <TextFX
@@ -53,6 +53,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
               glitch
               slice
               shadow
+              break
               size={90}
               style={{
                 fontFamily: 'Raleway, sans-serif',
@@ -67,6 +68,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             <TextFX
               appear="left"
               glitch
+              break
               size={20}
               style={{
                 fontFamily: 'Jura',
@@ -81,6 +83,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             <TextFX
               appear="right"
               glitch
+              break
               size={20}
               style={{
                 fontFamily: 'Jura',

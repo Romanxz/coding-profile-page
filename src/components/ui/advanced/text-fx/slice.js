@@ -12,8 +12,13 @@ const sliceStyles = {
 const useStyles = makeStyles(theme => ({
   slice1: {
     ...sliceStyles,
-    [theme.breakpoints.up('sm')]: { justifyContent: 'flex-start' },
-    [theme.breakpoints.down('sm')]: { justifyContent: 'center' },
+    [theme.breakpoints.up('md')]: {
+      justifyContent: props =>
+        props.break ? 'flex-start' : props.flexstart ? 'flex-start' : 'center',
+    },
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: props => (props.flexstart ? 'flex-start' : 'center'),
+    },
     textShadow: props =>
       props.shadow
         ? `
@@ -33,8 +38,13 @@ const useStyles = makeStyles(theme => ({
   },
   slice2: {
     ...sliceStyles,
-    [theme.breakpoints.up('sm')]: { justifyContent: 'flex-start' },
-    [theme.breakpoints.down('sm')]: { justifyContent: 'center' },
+    [theme.breakpoints.up('md')]: {
+      justifyContent: props =>
+        props.break ? 'flex-start' : props.flexstart ? 'flex-start' : 'center',
+    },
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: props => (props.flexstart ? 'flex-start' : 'center'),
+    },
     textShadow: props =>
       props.shadow
         ? `
@@ -55,8 +65,13 @@ const useStyles = makeStyles(theme => ({
   },
   slice3: {
     ...sliceStyles,
-    [theme.breakpoints.up('sm')]: { justifyContent: 'flex-start' },
-    [theme.breakpoints.down('sm')]: { justifyContent: 'center' },
+    [theme.breakpoints.up('md')]: {
+      justifyContent: props =>
+        props.break ? 'flex-start' : props.flexstart ? 'flex-start' : 'center',
+    },
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: props => (props.flexstart ? 'flex-start' : 'center'),
+    },
     textShadow: props =>
       props.shadow
         ? `
@@ -77,8 +92,13 @@ const useStyles = makeStyles(theme => ({
   },
   slice4: {
     ...sliceStyles,
-    [theme.breakpoints.up('sm')]: { justifyContent: 'flex-start' },
-    [theme.breakpoints.down('sm')]: { justifyContent: 'center' },
+    [theme.breakpoints.up('md')]: {
+      justifyContent: props =>
+        props.break ? 'flex-start' : props.flexstart ? 'flex-start' : 'center',
+    },
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: props => (props.flexstart ? 'flex-start' : 'center'),
+    },
     textShadow: props =>
       props.shadow
         ? `

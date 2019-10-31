@@ -129,7 +129,7 @@ export default class Themeform extends React.Component {
         </Grid>
         <Spacer size={mdUp ? 3 : 2} />
         {!isFormValid ? (
-          <Grid item container>
+          <Grid item>
             <FormErrors formErrors={this.state.formErrors} />
           </Grid>
         ) : null}

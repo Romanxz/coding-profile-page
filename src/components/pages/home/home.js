@@ -23,7 +23,7 @@ const Home = () => {
   const mdUp = useMediaQuery(theme.breakpoints.up('md'))
   return (
     <Container className={container}>
-      <Grid container direction="row" spacing={2}>
+      <Grid container direction="row">
         <Hidden smDown>
           <Grid item md={6} lg={6} />
         </Hidden>
@@ -35,8 +35,7 @@ const Home = () => {
             justify="flex-start"
             alignItems={mdUp ? 'flex-start' : 'center'}
             style={{
-              minHeight: '50%',
-              height: 'max-content',
+              minHeight: mdUp ? '50%' : '40%',
             }}
           >
             <Spacer size={mdUp ? 10 : 2} />
@@ -45,6 +44,7 @@ const Home = () => {
               glitch
               slice
               shadow
+              break
               size={90}
               style={{
                 fontFamily: 'Raleway, sans-serif',
@@ -60,6 +60,7 @@ const Home = () => {
               glitch
               slice
               shadow
+              break
               size={90}
               style={{
                 fontFamily: 'Raleway, sans-serif',
@@ -74,6 +75,7 @@ const Home = () => {
             <TextFX
               appear="left"
               glitch
+              break
               size={20}
               style={{
                 fontFamily: 'Jura',
@@ -88,6 +90,7 @@ const Home = () => {
             <TextFX
               appear="right"
               glitch
+              break
               size={20}
               style={{
                 fontFamily: 'Jura',
@@ -111,6 +114,7 @@ const Home = () => {
               height: 'min-content',
             }}
           >
+            <Spacer size={4} />
             <Buttonlink key={132} glitch to="/skills">
               SKILLS
             </Buttonlink>

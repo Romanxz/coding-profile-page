@@ -1,12 +1,13 @@
 import React from 'react'
 import Shadow from '../../animations/shadow'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
-import TextGlitcher from '../advanced/textglitcher'
+import TextFX from '../advanced/text-fx/text-fx'
 
 const styles = theme => ({
   label: {
     position: 'absolute',
+    height: 20,
+    width: '100%',
     top: 18,
     left: 20,
     background: 'transparent',
@@ -21,7 +22,12 @@ const styles = theme => ({
     boxSizing: 'border-box',
     height: 65,
     width: '100%',
-    maxWidth: 300,
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: 450,
+    },
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 300,
+    },
   },
   frame: {
     position: 'relative',
@@ -30,7 +36,12 @@ const styles = theme => ({
     background: 'transparent',
     border: '1px solid black',
     borderRadius: 8,
-    maxWidth: 300,
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: 450,
+    },
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 300,
+    },
     '&::before': {
       content: `""`,
       position: 'absolute',
@@ -75,7 +86,12 @@ const styles = theme => ({
     color: theme.palette.secondary.dark,
     outline: 'none',
     letterSpacing: 0,
-    maxWidth: 300,
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: 450,
+    },
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 300,
+    },
   },
 })
 
@@ -114,16 +130,20 @@ class Textfield extends React.Component {
         onMouseLeave={closeHover}
         nopress
       >
-        <Typography
-          color="secondary"
-          variant="body1"
-          className={label}
-          style={{ top: isSelected ? -4 : 30 }}
-        >
-          <TextGlitcher style={{ cursor: 'crosshair' }} glitched noshadow>
+        <div className={label} style={{ top: isSelected ? 0 : 35 }}>
+          <TextFX
+            glitch
+            flexstart
+            size={20}
+            style={{
+              fontFamily: 'Jura',
+              fontWeight: 400,
+              letterSpacing: 0,
+            }}
+          >
             {name}
-          </TextGlitcher>
-        </Typography>
+          </TextFX>
+        </div>
         <input
           className={input}
           style={{ paddingLeft: 20, width: 'calc(100% - 20px)' }}

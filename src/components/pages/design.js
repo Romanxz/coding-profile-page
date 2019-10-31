@@ -3,7 +3,6 @@ import Container from '../animations/container'
 import Shadow from '../animations/shadow'
 import { Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
-import Pimpedlink from '../ui/advanced/pimpedlink'
 
 const useStyles = makeStyles({
   design: {
@@ -36,51 +35,7 @@ const Design = () => {
             style={{ height: 80 }}
             spacing={3}
           >
-            <Grid item>
-              <Pimpedlink
-                style={{ height: 40, width: 120 }}
-                variant="h6"
-                to="/"
-              >
-                HOME
-              </Pimpedlink>
-            </Grid>
-            <Grid item>
-              <Pimpedlink
-                style={{ height: 40, width: 120 }}
-                variant="h6"
-                to="/design"
-              >
-                DESIGN
-              </Pimpedlink>
-            </Grid>
-            <Grid item>
-              <Pimpedlink
-                style={{ height: 40, width: 120 }}
-                variant="h6"
-                to="/hex"
-              >
-                HEX
-              </Pimpedlink>
-            </Grid>
-            <Grid item>
-              <Pimpedlink
-                style={{ height: 40, width: 120 }}
-                variant="h6"
-                to="/about"
-              >
-                ABOUT
-              </Pimpedlink>
-            </Grid>
-            <Grid item>
-              <Pimpedlink
-                style={{ height: 40, width: 120 }}
-                variant="h6"
-                to="/theme"
-              >
-                THEME
-              </Pimpedlink>
-            </Grid>
+            <Grid item></Grid>
           </Grid>
         </Shadow>
       </Grid>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Appear from '../../../animations/appear'
 import Slice from './slice'
@@ -10,26 +10,27 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    cursor: 'pointer',
     lineHeight: 1.1,
     width: '100%',
     height: props => props.size,
     fontSize: props => props.size,
     [theme.breakpoints.only('md')]: {
-      height: props => `calc(${props.size}px/100*80)`,
-      fontSize: props => `calc(${props.size}px/100*80)`,
+      height: props => `calc(${props.size}px/100*90)`,
+      fontSize: props => `calc(${props.size}px/100*90)`,
     },
     [theme.breakpoints.only('sm')]: {
       height: props => `calc(${props.size}px/100*70)`,
       fontSize: props => `calc(${props.size}px/100*70)`,
     },
     [theme.breakpoints.only('xs')]: {
-      height: props => `calc(${props.size}px/100*55)`,
-      fontSize: props => `calc(${props.size}px/100*55)`,
+      height: props => `calc(${props.size}px/100*60)`,
+      fontSize: props => `calc(${props.size}px/100*60)`,
     },
     whiteSpace: 'nowrap',
     color: theme.palette.secondary.main,
     zIndex: 100,
-    filter: 'saturate(1000%)',
+    filter: 'saturate(1200%)',
   },
   puretext: {
     position: 'absolute',
@@ -37,12 +38,18 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    [theme.breakpoints.up('sm')]: { justifyContent: 'flex-start' },
-    [theme.breakpoints.down('sm')]: { justifyContent: 'center' },
+    [theme.breakpoints.up('md')]: {
+      justifyContent: props =>
+        props.break ? 'flex-start' : props.flexstart ? 'flex-start' : 'center',
+    },
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: props => (props.flexstart ? 'flex-start' : 'center'),
+    },
   },
 }))
 
 const TextFX = props => {
+  const [isHovered, toggleHover] = useState(false)
   const classes = useStyles(props)
   const { container, puretext } = classes
   return (
@@ -52,16 +59,31 @@ const TextFX = props => {
       {...props}
       data-text={props.data ? props.data : props.children}
     >
-      {props.glitch ? (
-        <Glitch>{props.children}</Glitch>
-      ) : (
-        <div className={puretext}>{props.children}</div>
-      )}
-      {props.slice ? (
-        <Slice>{props.children}</Slice>
-      ) : (
-        <div className={puretext}>{props.children}</div>
-      )}
+      <div
+        className={container}
+        style={{ zIndex: 100, filter: 'saturate(100%)' }}
+        onMouseMove={() => toggleHover(true)}
+        onMouseLeave={() => toggleHover(false)}
+      >
+        {props.glitch ? (
+          <Glitch
+            isHovered={isHovered}
+            break={props.break}
+            flexstart={props.flexstart}
+          >
+            {props.children}
+          </Glitch>
+        ) : (
+          <div className={puretext}>{props.children}</div>
+        )}
+        {props.slice ? (
+          <Slice break={props.break} flexstart={props.flexstart}>
+            {props.children}
+          </Slice>
+        ) : (
+          <div className={puretext}>{props.children}</div>
+        )}
+      </div>
     </Appear>
   )
 }
