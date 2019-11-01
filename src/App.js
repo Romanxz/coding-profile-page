@@ -34,8 +34,7 @@ class App extends React.Component {
         primary: { main: '#ff3838' },
         secondary: { main: '#000000' },
       },
-      background:
-        'radial-gradient(circle, rgba(214,64,255,1) 0%, rgba(0,236,255,1) 67%, rgba(238,0,153,1) 100%)',
+      background: '#999999',
     },
     Black: {
       ...themeTemplate,
@@ -63,11 +62,11 @@ class App extends React.Component {
         fontFamily: 'Jura',
       },
       palette: {
-        primary: { main: '#11cb5f' },
-        secondary: { main: '#4a148c' },
+        primary: { main: '#8502c7' },
+        secondary: { main: '#07000d' },
       },
       background:
-        'radial-gradient(circle, rgba(213,255,80,1) 9%, rgba(0,236,255,1) 62%, rgba(255,0,164,1) 84%)',
+        'radial-gradient(circle, rgba(214,64,255,1) 0%, rgba(0,236,255,1) 67%, rgba(238,0,153,1) 100%)',
     },
     Custom: {
       ...themeTemplate,

@@ -1,24 +1,57 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 import Container from '../animations/container'
-import Shadow from '../animations/shadow'
+import TextFX from '../ui/advanced/text-fx/text-fx'
+import Buttonlink from '../ui/advanced/buttonlink'
+import Spacer from '../ui/basic/spacer'
 
-const About = () => {
+const useStyles = makeStyles(theme => ({
+  container: {
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
+  },
+}))
+
+const About = props => {
+  const classes = useStyles(props)
   return (
-    <Container
-      style={{
-        position: 'relative',
-        display: 'flex',
-        padding: 30,
-      }}
-    >
-      <Shadow
+    <Container className={classes.container}>
+      <TextFX
+        appear="right"
+        glitch
+        slice
+        shadow
+        size={90}
         style={{
-          position: 'relative',
-          height: 950,
-          width: 1500,
-          background: 'transparent',
+          fontFamily: 'Raleway, sans-serif',
+          fontWeight: 900,
+          letterSpacing: -5,
+          textTransform: 'uppercase',
         }}
-      />
+      >
+        IN DEVELOPMENT
+      </TextFX>
+      <Spacer size={4} />
+      <Buttonlink key={12} glitch to="/skills">
+        SKILLS
+      </Buttonlink>
+      <Spacer size={3} />
+      <Buttonlink key={65} glitch to="/about">
+        BIO
+      </Buttonlink>
+      <Spacer size={3} />
+      <Buttonlink key={667} glitch to="/theme">
+        THEME
+      </Buttonlink>
+      <Spacer size={3} />
+      <Buttonlink key={61} glitch to="/">
+        HOME
+      </Buttonlink>
     </Container>
   )
 }

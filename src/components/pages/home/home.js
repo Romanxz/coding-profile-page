@@ -126,10 +126,6 @@ const Home = () => {
             <Buttonlink key={67} glitch to="/theme">
               THEME
             </Buttonlink>
-            <Spacer size={3} />
-            <Buttonlink key={68} glitch to="/menu">
-              MENU
-            </Buttonlink>
           </Grid>
         </Grid>
       </Grid>
