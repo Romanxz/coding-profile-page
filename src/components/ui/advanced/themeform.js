@@ -101,7 +101,7 @@ export default class Themeform extends React.Component {
           style={{ width: '100%' }}
         >
           <Textfield
-            key={10}
+            key={1}
             onChange={handleTextfield}
             value={Background}
             type="text"
@@ -113,7 +113,7 @@ export default class Themeform extends React.Component {
           />
           <Spacer size={mdUp ? 3 : 2} />
           <Textfield
-            key={11}
+            key={2}
             onChange={handleTextfield}
             value={Text}
             type="text"
@@ -123,7 +123,7 @@ export default class Themeform extends React.Component {
         </Grid>
         <Spacer size={mdUp ? 3 : 2} />
         <Grid item>
-          <Buttonlink key={33} glitch to="/">
+          <Buttonlink key={1} glitch to="/">
             HOME
           </Buttonlink>
         </Grid>

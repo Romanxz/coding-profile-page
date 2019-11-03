@@ -1,12 +1,16 @@
 import React from 'react'
 import TextFX from './text-fx/text-fx'
+import Appear from '../../animations/appear'
 
 const FormErrors = ({ formErrors }) => (
   <div className="formErrors">
-    {Object.keys(formErrors).map((fieldName, i) => {
+    {Object.keys(formErrors).map((fieldName, id) => {
       if (formErrors[fieldName].length > 0) {
         return (
-          <div style={{ position: 'absolute', height: 18, width: '100%' }}>
+          <Appear
+            key={(id+10)}
+            style={{ position: 'absolute', height: 18, width: '100%' }}
+          >
             <TextFX
               glitch
               break
@@ -21,7 +25,7 @@ const FormErrors = ({ formErrors }) => (
             >
               {fieldName} {formErrors[fieldName]}
             </TextFX>
-          </div>
+          </Appear>
         )
       } else {
         return ''

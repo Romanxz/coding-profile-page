@@ -2,10 +2,10 @@ import posed from 'react-pose'
 
 const Container = posed.div({
   enter: {
-    staggerChildren: 50,
+    staggerChildren: 100,
   },
   exit: {
-    staggerChildren: 20,
+    staggerChildren: 50,
     staggerDirection: -1,
   },
 })

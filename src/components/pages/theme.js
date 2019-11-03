@@ -1,10 +1,9 @@
 import React from 'react'
 import Container from '../animations/container'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import { Grid, Typography, Hidden, useMediaQuery } from '@material-ui/core/'
+import { Grid, Hidden, useMediaQuery } from '@material-ui/core/'
 import Themeform from '../ui/advanced/themeform'
 import Spacer from '../ui/basic/spacer'
-import Appear from '../animations/appear'
 import TextFX from '../ui/advanced/text-fx/text-fx'
 
 const useStyles = makeStyles({
@@ -54,6 +53,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
               slice
               shadow
               break
+              key={1}
               size={90}
               style={{
                 fontFamily: 'Raleway, sans-serif',
@@ -70,6 +70,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
               glitch
               break
               size={20}
+              key={2}
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,
@@ -85,6 +86,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
               glitch
               break
               size={20}
+              key={3}
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,

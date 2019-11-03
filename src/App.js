@@ -127,7 +127,7 @@ class App extends React.Component {
           <Route
             render={({ location }) => (
               <Background theme={createMuiTheme(this.state[theme])}>
-                <PoseGroup animateOnMount>
+                <PoseGroup animateOnMount >
                   <RoutesAnimation style={RoutesStyle} key={location.pathname}>
                     <Switch location={location}>
                       <Route path="/" exact component={Home} />

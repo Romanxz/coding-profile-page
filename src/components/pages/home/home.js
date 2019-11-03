@@ -46,6 +46,7 @@ const Home = () => {
               shadow
               break
               size={90}
+              key={1}
               style={{
                 fontFamily: 'Raleway, sans-serif',
                 fontWeight: 900,
@@ -61,6 +62,7 @@ const Home = () => {
               slice
               shadow
               break
+              key={2}
               size={90}
               style={{
                 fontFamily: 'Raleway, sans-serif',
@@ -77,6 +79,7 @@ const Home = () => {
               glitch
               break
               size={20}
+              key={3}
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,
@@ -92,6 +95,7 @@ const Home = () => {
               glitch
               break
               size={20}
+              key={4}
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,
@@ -115,15 +119,15 @@ const Home = () => {
             }}
           >
             <Spacer size={4} />
-            <Buttonlink key={132} glitch to="/skills">
+            <Buttonlink key={1} glitch to="/skills">
               SKILLS
             </Buttonlink>
             <Spacer size={3} />
-            <Buttonlink key={63} glitch to="/about">
+            <Buttonlink key={2} glitch to="/about">
               BIO
             </Buttonlink>
             <Spacer size={3} />
-            <Buttonlink key={67} glitch to="/theme">
+            <Buttonlink key={3} glitch to="/theme">
               THEME
             </Buttonlink>
           </Grid>

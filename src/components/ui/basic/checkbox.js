@@ -114,7 +114,7 @@ class Checkbox extends React.Component {
 
   render() {
     const { isPressed, isHovered } = this.state
-    let { style, classes, checked, onChange } = this.props
+    let { style, key, classes, checked, onChange } = this.props
     const {
       hiddencheckbox,
       actualcheckbox,
@@ -129,6 +129,7 @@ class Checkbox extends React.Component {
           pose={isPressed ? 'press' : 'enter'}
           className={actualcheckbox}
           style={style}
+          key={key}
         >
           <div className={name}>
             <TextFX
