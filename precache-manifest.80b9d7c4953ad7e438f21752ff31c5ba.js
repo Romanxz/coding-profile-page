@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2aef42e6b283580f9e5dabf726149173",
+    "revision": "e820d4b0366e28a0a81c72656c026ca6",
     "url": "/coding-profile-page/index.html"
   },
   {
@@ -8,36 +8,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coding-profile-page/static/css/2.f83c72cd.chunk.css"
   },
   {
-    "revision": "7ab3ce58a81cde929481",
-    "url": "/coding-profile-page/static/css/main.d483534d.chunk.css"
+    "revision": "c84df8c1c9503348bd3f",
+    "url": "/coding-profile-page/static/css/main.a7da0726.chunk.css"
   },
   {
     "revision": "aa4a8fdf094d663f3a4b",
     "url": "/coding-profile-page/static/js/2.a331dd94.chunk.js"
   },
   {
-    "revision": "7ab3ce58a81cde929481",
-    "url": "/coding-profile-page/static/js/main.19678b5c.chunk.js"
+    "revision": "c84df8c1c9503348bd3f",
+    "url": "/coding-profile-page/static/js/main.5a63ddd8.chunk.js"
   },
   {
     "revision": "0fc73e4daf2ff4d79ab7",
     "url": "/coding-profile-page/static/js/runtime~main.b9c5d62e.js"
   },
   {
-    "revision": "216218e739f1bfeab0932a5092b805e1",
-    "url": "/coding-profile-page/static/media/Marske.216218e7.ttf"
+    "revision": "a4fd8210fff1bf26d5fa1455bd051702",
+    "url": "/coding-profile-page/static/media/Aerospace.a4fd8210.ttf"
   },
   {
-    "revision": "3b8f2f0334ffc628f8caa2eb4fe5b46f",
-    "url": "/coding-profile-page/static/media/Sfautobold.3b8f2f03.ttf"
+    "revision": "0899368ee7bce0b8640ea40e3149574d",
+    "url": "/coding-profile-page/static/media/CL.0899368e.ttf"
   },
   {
     "revision": "d659caeb9e8c3696f4704659e75ac4a6",
     "url": "/coding-profile-page/static/media/bigmacca.d659caeb.ttf"
   },
   {
-    "revision": "39636dd7d7cd4a3a84d9a73a23b30770",
-    "url": "/coding-profile-page/static/media/goodtimes.39636dd7.ttf"
+    "revision": "843e6c09e8e8052681fdf5da7a1df321",
+    "url": "/coding-profile-page/static/media/ethnocentric.843e6c09.ttf"
   },
   {
     "revision": "ff2a407fe06752facf8828a86955e988",
