@@ -11,13 +11,13 @@
 }
 
 @font-face {
-  font-family: 'marske';
-  src: url(./media/fonts/Marske.ttf)
+  font-family: 'Aero';
+  src: url(./media/fonts/Aerospace.ttf)
 }
 
 @font-face {
-  font-family: 'SF';
-  src: url(./media/fonts/Sfautobold.ttf)
+  font-family: 'CL';
+  src: url(./media/fonts/CL.ttf)
 }
 
 @font-face {
@@ -26,9 +26,16 @@
 }
 
 @font-face {
-  font-family: 'GT';
-  src: url(./media/fonts/goodtimes.ttf)
+  font-family: 'Etno';
+  src: url(./media/fonts/ethnocentric.ttf)
 }
+
+/* @media only screen and (orientation:portrait){
+  body {
+    height: 100vw;
+    transform: rotate(90deg);
+  }
+} */
 
 body {
   margin: 0;

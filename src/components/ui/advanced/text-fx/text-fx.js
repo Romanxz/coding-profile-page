@@ -14,19 +14,33 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: props => props.size,
     fontSize: props => props.size,
+    [theme.breakpoints.only('lg')]: {
+      height: props =>
+        props.noresponse
+          ? `${props.size}`
+          : props.header
+          ? `calc(${props.size}px/100*90)`
+          : `calc(${props.size}px/100*90)`,
+      fontSize: props =>
+        props.noresponse
+          ? `${props.size}`
+          : props.header
+          ? `calc(${props.size}px/100*90)`
+          : `calc(${props.size}px/100*90)`,
+    },
     [theme.breakpoints.only('md')]: {
       height: props =>
         props.noresponse
           ? `${props.size}`
           : props.header
           ? `calc(${props.size}px/100*70)`
-          : `calc(${props.size}px/100*90)`,
+          : `calc(${props.size}px/100*80)`,
       fontSize: props =>
         props.noresponse
           ? `${props.size}`
           : props.header
           ? `calc(${props.size}px/100*70)`
-          : `calc(${props.size}px/100*90)`,
+          : `calc(${props.size}px/100*80)`,
     },
     [theme.breakpoints.only('sm')]: {
       height: props =>
@@ -34,13 +48,13 @@ const useStyles = makeStyles(theme => ({
           ? `${props.size}`
           : props.header
           ? `calc(${props.size}px/100*70)`
-          : `calc(${props.size}px/100*80)`,
+          : `calc(${props.size}px/100*70)`,
       fontSize: props =>
         props.noresponse
           ? `${props.size}`
           : props.header
           ? `calc(${props.size}px/100*70)`
-          : `calc(${props.size}px/100*80)`,
+          : `calc(${props.size}px/100*70)`,
     },
     [theme.breakpoints.only('xs')]: {
       height: props =>
@@ -48,13 +62,13 @@ const useStyles = makeStyles(theme => ({
           ? `${props.size}`
           : props.header
           ? `calc(${props.size}px/100*50)`
-          : `calc(${props.size}px/100*70)`,
+          : `calc(${props.size}px/100*60)`,
       fontSize: props =>
         props.noresponse
           ? `${props.size}`
           : props.header
           ? `calc(${props.size}px/100*50)`
-          : `calc(${props.size}px/100*70)`,
+          : `calc(${props.size}px/100*60)`,
     },
     whiteSpace: 'nowrap',
     color: theme.palette.secondary.main,

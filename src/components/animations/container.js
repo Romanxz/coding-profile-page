@@ -5,7 +5,7 @@ const RouteContainer = posed.div({
     staggerChildren: 100,
   },
   exit: {
-    staggerChildren: 50,
+    staggerChildren: 30,
     staggerDirection: -1,
   },
 })

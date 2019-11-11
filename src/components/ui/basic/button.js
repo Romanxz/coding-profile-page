@@ -81,8 +81,6 @@ class Button extends React.Component {
         className={classes.button}
         {...this.props}
         onClick={disabled ? null : onClick}
-        // onPointerDown={this.togglePress}
-        // onPointerUp={this.closePress}
         onMouseMove={this.toggleHover}
         onMouseLeave={this.closePressHover}
       >

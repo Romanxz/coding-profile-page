@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     background: theme.background,
-    // git
   },
   particles: {
     zIndex: -1,

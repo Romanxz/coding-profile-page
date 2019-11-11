@@ -30,10 +30,10 @@ const useStyles = makeStyles(theme => ({
      1px 3px 5px ${theme.palette.shadow},
      2px 2px 5px ${theme.palette.shadow},
      2px 3px 5px ${theme.palette.shadow},
-     2px 4px 5px ${theme.palette.shadow}
+     2px 4px 5px ${theme.palette.shadow},
      `
         : '',
-    maskImage: 'linear-gradient(black 35%, transparent 35%)',
+    maskImage: 'linear-gradient(black 30%, transparent 30%)',
     animation: '$slice1 5s infinite alternate-reverse',
   },
   slice2: {
@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme => ({
      `
         : '',
     maskImage:
-      'linear-gradient(transparent 35%, black 35%, black 50%, transparent 50%)',
+      'linear-gradient(transparent 30%, black 30%, black 50%, transparent 50%)',
     animation: '$slice2 5s infinite alternate-reverse',
   },
   slice3: {
@@ -87,7 +87,7 @@ const useStyles = makeStyles(theme => ({
      `
         : '',
     maskImage:
-      'linear-gradient(transparent 50%, black 50%, black 65%, transparent 65%)',
+      'linear-gradient(transparent 50%, black 50%, black 70%, transparent 70%)',
     animation: '$slice3 5s infinite alternate-reverse',
   },
   slice4: {
@@ -113,7 +113,7 @@ const useStyles = makeStyles(theme => ({
      2px 4px 5px ${theme.palette.shadow}
      `
         : '',
-    maskImage: 'linear-gradient(transparent 65%, black 65%)',
+    maskImage: 'linear-gradient(transparent 70%, black 70%)',
     animation: '$slice4 5s infinite alternate-reverse',
   },
   '@keyframes slice1': {
