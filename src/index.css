@@ -2,17 +2,12 @@
 
 @font-face {
   font-family: 'matrix';
-  src: url(./components/themes/fonts/matrixcode.ttf)
+  src: url(./media/fonts/matrixcode.ttf)
 }
 
 @font-face {
-  font-family: 'nidsans';
-  src: url(./components/themes/fonts/nidsans.ttf)
-}
-
-@font-face {
-  font-family: 'vgr';
-  src: url(./media/fonts/VGRregular.ttf)
+  font-family: 'Bigmacca';
+  src: url(./media/fonts/bigmacca.ttf)
 }
 
 @font-face {

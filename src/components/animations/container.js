@@ -1,6 +1,6 @@
 import posed from 'react-pose'
 
-const Container = posed.div({
+const RouteContainer = posed.div({
   enter: {
     staggerChildren: 100,
   },
@@ -10,4 +10,4 @@ const Container = posed.div({
   },
 })
 
-export default Container
+export default RouteContainer

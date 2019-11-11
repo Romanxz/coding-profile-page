@@ -1,11 +1,11 @@
 import React from 'react'
-import Container from '../../animations/container'
-import Buttonlink from '../../ui/advanced/buttonlink'
+import RouteContainer from '../animations/container'
+import Buttonlink from '../ui/advanced/buttonlink'
 import { Grid, Hidden, useMediaQuery } from '@material-ui/core/'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import { Spacer } from '../../ui/basic/spacer'
-import Divider from '../../ui/basic/divider'
-import TextFX from '../../ui/advanced/text-fx/text-fx'
+import { Spacer } from '../ui/basic/spacer'
+import Divider from '../ui/basic/divider'
+import TextFX from '../ui/advanced/text-fx/text-fx'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -18,11 +18,10 @@ const useStyles = makeStyles(theme => ({
 
 const Home = () => {
   const classes = useStyles()
-  const { container } = classes
   const theme = useTheme()
   const mdUp = useMediaQuery(theme.breakpoints.up('md'))
   return (
-    <Container className={container}>
+    <RouteContainer className={classes.container}>
       <Grid container direction="row">
         <Hidden smDown>
           <Grid item md={6} lg={6} />
@@ -41,16 +40,13 @@ const Home = () => {
             <Spacer size={mdUp ? 10 : 2} />
             <TextFX
               appear="left"
-              glitch
-              slice
-              shadow
+              header
               break
               size={90}
               key={1}
               style={{
-                fontFamily: 'Raleway, sans-serif',
-                fontWeight: 900,
-                letterSpacing: -5,
+                fontFamily: 'Bigmacca',
+                fontWeight: 400,
                 textTransform: 'uppercase',
               }}
             >
@@ -58,16 +54,13 @@ const Home = () => {
             </TextFX>
             <TextFX
               appear="right"
-              glitch
-              slice
-              shadow
+              header
               break
               key={2}
               size={90}
               style={{
-                fontFamily: 'Raleway, sans-serif',
-                fontWeight: 900,
-                letterSpacing: -5,
+                fontFamily: 'Bigmacca',
+                fontWeight: 400,
                 textTransform: 'uppercase',
               }}
             >
@@ -83,7 +76,6 @@ const Home = () => {
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,
-                letterSpacing: 0,
                 textTransform: 'uppercase',
               }}
             >
@@ -99,7 +91,6 @@ const Home = () => {
               style={{
                 fontFamily: 'Jura',
                 fontWeight: 400,
-                letterSpacing: 0,
                 textTransform: 'uppercase',
               }}
             >
@@ -133,7 +124,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Grid>
-    </Container>
+    </RouteContainer>
   )
 }
 

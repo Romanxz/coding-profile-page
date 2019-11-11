@@ -75,8 +75,7 @@ class Button extends React.Component {
   }
 
   render() {
-    let { children, classes, disabled, glowoff, onClick } = this.props
-    const { isPressed, isHovered } = this.state
+    const { children, classes, disabled, glowoff, onClick } = this.props
     return (
       <Shadow
         className={classes.button}
@@ -90,7 +89,7 @@ class Button extends React.Component {
         <div
           className={classes.frame}
           style={{
-            opacity: glowoff ? 0 : isHovered ? 0.8 : 0,
+            opacity: glowoff ? 0 : this.state.isHovered ? 0.8 : 0,
           }}
         />
         {children}

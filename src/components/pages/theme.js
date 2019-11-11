@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '../animations/container'
+import RouteContainer from '../animations/container'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { Grid, Hidden, useMediaQuery } from '@material-ui/core/'
 import Themeform from '../ui/advanced/themeform'
@@ -21,7 +21,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
   const theme2 = useTheme()
   const mdUp = useMediaQuery(theme2.breakpoints.up('md'))
   return (
-    <Container className={classes.container}>
+    <RouteContainer className={classes.container}>
       <Grid container direction="row">
         <Hidden smDown>
           <Grid item md={6} lg={6} />
@@ -49,20 +49,17 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             <Spacer size={mdUp ? 10 : 2} />
             <TextFX
               appear="left"
-              glitch
-              slice
-              shadow
+              header
               break
-              key={1}
               size={90}
+              key={1}
               style={{
-                fontFamily: 'Raleway, sans-serif',
-                fontWeight: 900,
-                letterSpacing: -5,
+                fontFamily: 'Bigmacca',
+                fontWeight: 400,
                 textTransform: 'uppercase',
               }}
             >
-              THEME
+              Theme
             </TextFX>
             <Spacer size={4} />
             <TextFX
@@ -106,7 +103,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
           />
         </Grid>
       </Grid>
-    </Container>
+    </RouteContainer>
   )
 }
 

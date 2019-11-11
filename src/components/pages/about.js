@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Container from '../animations/container'
+import RouteContainer from '../animations/container'
 import TextFX from '../ui/advanced/text-fx/text-fx'
 import Buttonlink from '../ui/advanced/buttonlink'
 import Spacer from '../ui/basic/spacer'
@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 const About = props => {
   const classes = useStyles(props)
   return (
-    <Container className={classes.container}>
+    <RouteContainer className={classes.container}>
       <TextFX
         appear="right"
         glitch
@@ -52,7 +52,7 @@ const About = props => {
       <Buttonlink key={61} glitch to="/">
         HOME
       </Buttonlink>
-    </Container>
+    </RouteContainer>
   )
 }
 

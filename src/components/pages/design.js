@@ -1,7 +1,7 @@
 import React from 'react'
-import Container from '../animations/container'
+import RouteContainer from '../animations/container'
 import Shadow from '../animations/shadow'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles({
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 const Design = () => {
   const classes = useStyles()
   return (
-    <Container className={classes.design}>
+    <RouteContainer className={classes.design}>
       <Grid
         container
         direction="column"
@@ -39,7 +39,7 @@ const Design = () => {
           </Grid>
         </Shadow>
       </Grid>
-    </Container>
+    </RouteContainer>
   )
 }
 

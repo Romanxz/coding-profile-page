@@ -26,12 +26,14 @@ const Buttonlink = props => {
       <Link className={classes.link} style={props.style} to={props.to}>
         <TextFX
           glitch
+          noresponse
           size={18}
           style={{
             fontFamily: 'Jura',
             fontWeight: 400,
             letterSpacing: 0,
             textTransform: 'uppercase',
+            height: '100%',
           }}
         >
           {props.children}

@@ -26,7 +26,6 @@ const useStyles = makeStyles(theme => ({
 
 const Background = React.memo(({ theme, ...props }) => {
   const classes = useStyles()
-  console.log(theme.palette.secondary.main)
   var config = {
     particles: {
       number: {

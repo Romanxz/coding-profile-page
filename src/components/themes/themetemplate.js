@@ -7,11 +7,10 @@ const themeTemplate = createMuiTheme({
       'Jura',
       'typeface-orbitron',
       'Raleway',
-      'Raleway, sans-serif',
+      'Cyberdyne',
       'SF',
       'marske',
       'vgr',
-      'GT, sans-serif',
     ].join(','),
     button: {
       fontFamily: 'Jura',
@@ -22,7 +21,7 @@ const themeTemplate = createMuiTheme({
       textTransform: 'uppercase',
     },
     h1: {
-      fontFamily: 'Raleway',  
+      fontFamily: 'Raleway',
       fontWeight: 900,
       fontSize: '1rem',
       lineHeight: 1.75,
