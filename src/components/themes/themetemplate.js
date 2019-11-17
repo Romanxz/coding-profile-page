@@ -39,3 +39,4 @@ const themeTemplate = createMuiTheme({
 })
 
 export default themeTemplate
+

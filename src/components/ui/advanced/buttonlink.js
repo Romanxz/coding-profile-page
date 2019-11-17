@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../basic/button'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
-import TextFX from './text-fx/text-fx'
+import Label from './text-fx/variants/label'
 
 const useStyles = makeStyles(theme => ({
   link: {
@@ -24,20 +24,7 @@ const Buttonlink = props => {
   return (
     <Button style={props.style} key={props.key}>
       <Link className={classes.link} style={props.style} to={props.to}>
-        <TextFX
-          glitch
-          noresponse
-          size={18}
-          style={{
-            fontFamily: 'Jura',
-            fontWeight: 400,
-            letterSpacing: 0,
-            textTransform: 'uppercase',
-            height: '100%',
-          }}
-        >
-          {props.children}
-        </TextFX>
+        <Label uppercase>{props.children}</Label>
       </Link>
     </Button>
   )

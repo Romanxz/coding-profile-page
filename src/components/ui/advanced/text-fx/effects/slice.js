@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
      1px 3px 5px ${theme.palette.shadow},
      2px 2px 5px ${theme.palette.shadow},
      2px 3px 5px ${theme.palette.shadow},
-     2px 4px 5px ${theme.palette.shadow},
+     2px 4px 5px ${theme.palette.shadow}
      `
         : '',
     maskImage: 'linear-gradient(black 30%, transparent 30%)',

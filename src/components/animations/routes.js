@@ -11,7 +11,6 @@ export const RoutesAnimation = posed.div({
   },
   exit: {
     opacity: 0,
-    afterChildren: true,
     applyAtEnd: {
       display: 'none',
     },

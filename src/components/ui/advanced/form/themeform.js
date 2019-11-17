@@ -1,10 +1,10 @@
 import React from 'react'
-import Textfield from '../basic/textfield'
-import Selector from './selector'
+import Textfield from '../../basic/textfield'
+import Selector from '../selector'
 import FormErrors from './formerrors'
 import { Grid } from '@material-ui/core'
-import Buttonlink from './buttonlink'
-import Spacer from '../basic/spacer'
+import Buttonlink from '../buttonlink'
+import Spacer from '../../basic/spacer'
 
 export default class Themeform extends React.Component {
   state = {
@@ -123,9 +123,7 @@ export default class Themeform extends React.Component {
         </Grid>
         <Spacer size={mdUp ? 3 : 2} />
         <Grid item>
-          <Buttonlink key={1} glitch to="/">
-            HOME
-          </Buttonlink>
+          <Buttonlink to="/">HOME</Buttonlink>
         </Grid>
         <Spacer size={mdUp ? 3 : 2} />
         {!isFormValid ? (

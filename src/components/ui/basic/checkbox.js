@@ -1,7 +1,7 @@
 import React from 'react'
 import Shadow from '../../animations/shadow'
 import { withStyles } from '@material-ui/core/styles'
-import TextFX from '../advanced/text-fx/text-fx'
+import Label from '../advanced/text-fx/variants/label'
 
 const styles = theme => ({
   hiddencheckbox: {
@@ -80,7 +80,7 @@ const styles = theme => ({
     borderRadius: '50%',
     background: theme.palette.primary.main,
     cursor: 'pointer',
-    transition: 'all 0.3s',
+    transition: 'all 0.7s',
   },
   name: {
     position: 'absolute',
@@ -89,6 +89,7 @@ const styles = theme => ({
     background: 'transparent',
   },
   wrapper: {
+    zIndex: 100,
     position: 'relative',
     display: 'flex',
     height: 30,
@@ -98,22 +99,18 @@ const styles = theme => ({
 })
 
 class Checkbox extends React.Component {
-  state = { isPressed: false, isHovered: false }
+  state = { isHovered: false }
 
   toggleHover = () => {
-    this.setState({ isHovered: true })
+    this.setState({ isHovered: !this.state.isHovered })
   }
 
-  togglePress = () => {
-    this.setState({ isPressed: !this.state.isPressed })
-  }
-
-  closePressHover = () => {
-    this.setState({ isPressed: false, isHovered: false })
+  closeHover = () => {
+    this.setState({ isHovered: false })
   }
 
   render() {
-    const { isPressed, isHovered } = this.state
+    const { isHovered } = this.state
     let { style, key, classes, checked, onChange } = this.props
     const {
       hiddencheckbox,
@@ -125,37 +122,18 @@ class Checkbox extends React.Component {
     } = classes
     return (
       <div className={wrapper}>
-        <Shadow
-          pose={isPressed ? 'press' : 'enter'}
-          className={actualcheckbox}
-          style={style}
-          key={key}
-        >
+        <Shadow nopress className={actualcheckbox} style={style} key={key}>
           <div className={name}>
-            <TextFX
-              flexstart
-              glitch
-              size={16}
-              style={{
-                fontFamily: 'Jura',
-                fontWeight: 400,
-                letterSpacing: 0,
-                textTransform: 'uppercase',
-              }}
-            >
+            <Label flexstart uppercase size={16}>
               {this.props.name}
-            </TextFX>
+            </Label>
           </div>
-          <label
-            className={actualcheckbox}
-            onMouseDown={this.togglePress}
-            onMouseUp={this.closePress}
-            onMouseMove={this.toggleHover}
-            onMouseLeave={this.closePressHover}
-          >
+          <label className={actualcheckbox}>
             <div
               className={checkmark}
               style={{ width: checked ? 25 : 0, height: checked ? 25 : 0 }}
+              onMouseMove={this.toggleHover}
+              onMouseLeave={this.closeHover}
             />
             <input
               name={this.props.name}

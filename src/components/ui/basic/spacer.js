@@ -1,4 +1,3 @@
-import { Theme } from '@material-ui/core'
 import { makeStyles, useTheme } from '@material-ui/styles'
 import React from 'react'
 
@@ -14,7 +13,6 @@ export const Spacer = ({ size = 1 }) => {
   const theme = useTheme()
   const styleprops = { theme, size }
   const classes = useStyle(styleprops)
-
   return <div className={classes.spacer} />
 }
 

@@ -21,6 +21,11 @@
 }
 
 @font-face {
+  font-family: 'Clbold';
+  src: url(./media/fonts/CLbold.ttf)
+}
+
+@font-face {
   font-family: 'Raleway';
   src: url(./media/fonts/ralewayblack.ttf)
 }

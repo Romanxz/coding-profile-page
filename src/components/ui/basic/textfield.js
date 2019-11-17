@@ -1,7 +1,7 @@
 import React from 'react'
 import Shadow from '../../animations/shadow'
 import { withStyles } from '@material-ui/core/styles'
-import TextFX from '../advanced/text-fx/text-fx'
+import Label from '../advanced/text-fx/variants/label'
 
 const styles = theme => ({
   label: {
@@ -131,18 +131,12 @@ class Textfield extends React.Component {
         nopress
       >
         <div className={label} style={{ top: isSelected ? 0 : 35 }}>
-          <TextFX
-            glitch
+          <Label
             flexstart
             size={20}
-            style={{
-              fontFamily: 'Jura',
-              fontWeight: 400,
-              letterSpacing: 0,
-            }}
           >
             {name}
-          </TextFX>
+          </Label>
         </div>
         <input
           className={input}

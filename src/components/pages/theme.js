@@ -2,9 +2,10 @@ import React from 'react'
 import RouteContainer from '../animations/container'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { Grid, Hidden, useMediaQuery } from '@material-ui/core/'
-import Themeform from '../ui/advanced/themeform'
+import Themeform from '../ui/advanced/form/themeform'
 import Spacer from '../ui/basic/spacer'
-import TextFX from '../ui/advanced/text-fx/text-fx'
+import Header from '../ui/advanced/text-fx/variants/header'
+import Text from '../ui/advanced/text-fx/variants/text'
 
 const useStyles = makeStyles({
   container: {
@@ -47,52 +48,15 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             }}
           >
             <Spacer size={mdUp ? 10 : 2} />
-            <TextFX
-              appear="left"
-              header
-              break
-              size={90}
-              key={1}
-              style={{
-                fontFamily: 'Bigmacca',
-                fontWeight: 400,
-                textTransform: 'uppercase',
-              }}
-            >
-              Theme
-            </TextFX>
+            <Header appear="left">Theme</Header>
             <Spacer size={4} />
-            <TextFX
-              appear="left"
-              glitch
-              break
-              size={20}
-              key={2}
-              style={{
-                fontFamily: 'Jura',
-                fontWeight: 400,
-                letterSpacing: 0,
-                textTransform: 'uppercase',
-              }}
-            >
-              {'- CHOOSE YOUR THEME -'}
-            </TextFX>
+            <Text appear="right" size={26}>
+              Choose Your Theme
+            </Text>
             <Spacer size={2} />
-            <TextFX
-              appear="right"
-              glitch
-              break
-              size={20}
-              key={3}
-              style={{
-                fontFamily: 'Jura',
-                fontWeight: 400,
-                letterSpacing: 0,
-                textTransform: 'uppercase',
-              }}
-            >
-              {'- CREATE A NEW ONE WITH CUSTOM HEX CODE -'}
-            </TextFX>
+            <Text appear="left" size={26}>
+              Make a new one with custom hex codes
+            </Text>
           </Grid>
           <Themeform
             mdUp={mdUp}

@@ -1,11 +1,11 @@
 import React from 'react'
 import RouteContainer from '../animations/container'
-import Buttonlink from '../ui/advanced/buttonlink'
 import { Grid, Hidden, useMediaQuery } from '@material-ui/core/'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import { Spacer } from '../ui/basic/spacer'
-import Divider from '../ui/basic/divider'
-import TextFX from '../ui/advanced/text-fx/text-fx'
+import Menu from '../ui/advanced/menu'
+import Spacer from '../ui/basic/spacer'
+import Header from '../ui/advanced/text-fx/variants/header'
+import Text from '../ui/advanced/text-fx/variants/text'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -37,91 +37,25 @@ const Home = () => {
               minHeight: mdUp ? '50%' : '40%',
             }}
           >
-            <Spacer size={mdUp ? 10 : 2} />
-            <TextFX
-              appear="left"
-              header
-              break
-              size={90}
-              key={1}
-              style={{
-                fontFamily: 'Bigmacca',
-                fontWeight: 400,
-                textTransform: 'uppercase',
-              }}
-            >
-              ROMAN
-            </TextFX>
-            <TextFX
-              appear="right"
-              header
-              break
-              key={2}
-              size={90}
-              style={{
-                fontFamily: 'Bigmacca',
-                fontWeight: 400,
-                textTransform: 'uppercase',
-              }}
-            >
-              GORBUNOV
-            </TextFX>
+            <Spacer size={mdUp ? 10 : 4} />
+            <Header appear="left">ROMAN</Header>
+            <Header appear="right">GORBUNOV</Header>
             <Spacer size={mdUp ? 4 : 2} />
-            <TextFX
-              appear="left"
-              glitch
-              break
-              size={20}
-              key={3}
-              style={{
-                fontFamily: 'Jura',
-                fontWeight: 400,
-                textTransform: 'uppercase',
-              }}
-            >
-              {'- Javascript Programmer -'}
-            </TextFX>
+            <Text size={26} appear="left">
+              Javascript Programmer
+            </Text>
             <Spacer size={2} />
-            <TextFX
-              appear="right"
-              glitch
-              break
-              size={20}
-              key={4}
-              style={{
-                fontFamily: 'Jura',
-                fontWeight: 400,
-                textTransform: 'uppercase',
-              }}
-            >
-              {'- Web Designer -'}
-            </TextFX>
+            <Text size={26} appear="right">
+              Web Designer
+            </Text>
           </Grid>
-          <Grid
-            item
-            container
-            direction="column"
-            justify="center"
-            alignItems={mdUp ? 'flex-start' : 'center'}
-            style={{
-              minHeight: '30%',
-              maxHeight: '50%',
-              height: 'min-content',
-            }}
-          >
-            <Spacer size={4} />
-            <Buttonlink key={1} glitch to="/skills">
-              SKILLS
-            </Buttonlink>
-            <Spacer size={3} />
-            <Buttonlink key={2} glitch to="/about">
-              BIO
-            </Buttonlink>
-            <Spacer size={3} />
-            <Buttonlink key={3} glitch to="/theme">
-              THEME
-            </Buttonlink>
-          </Grid>
+          <Menu
+            links={[
+              { name: 'SKILLS', to: '/skills' },
+              { name: 'BIO', to: '/bio' },
+              { name: 'THEME', to: '/theme' },
+            ]}
+          />
         </Grid>
       </Grid>
     </RouteContainer>

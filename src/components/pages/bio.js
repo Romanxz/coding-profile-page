@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const About = props => {
+const Bio = props => {
   const classes = useStyles(props)
   return (
     <RouteContainer className={classes.container}>
@@ -56,4 +56,4 @@ const About = props => {
   )
 }
 
-export default About
+export default Bio

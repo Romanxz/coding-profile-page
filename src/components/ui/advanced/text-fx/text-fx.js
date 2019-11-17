@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Appear from '../../../animations/appear'
-import Slice from './slice'
-import Glitch from './glitch'
+import Slice from './effects/slice'
+import Glitch from './effects/glitch'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -71,7 +71,7 @@ const useStyles = makeStyles(theme => ({
           : `calc(${props.size}px/100*60)`,
     },
     whiteSpace: 'nowrap',
-    color: theme.palette.secondary.main,
+    color: props => (props.color ? props.color : theme.palette.secondary.main),
     zIndex: 100,
     filter: 'saturate(1200%)',
   },

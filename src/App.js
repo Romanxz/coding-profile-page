@@ -7,7 +7,7 @@ import Background from './components/ui/basic/background'
 import Home from './components/pages/home'
 import Design from './components/pages/design'
 import Skills from './components/pages/skills'
-import About from './components/pages/about'
+import Bio from './components/pages/bio'
 import Theme from './components/pages/theme'
 import { ThemeProvider } from '@material-ui/styles'
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
@@ -127,14 +127,14 @@ class App extends React.Component {
           <Route
             render={({ location }) => (
               <Background theme={createMuiTheme(this.state[theme])}>
-                <PoseGroup animateOnMount >
+                <PoseGroup animateOnMount>
                   <RoutesAnimation style={RoutesStyle} key={location.pathname}>
                     <Switch location={location}>
                       <Route path="/" exact component={Home} />
                       <Route path="/menu" component={Menu} />
                       <Route path="/design" component={Design} />
                       <Route path="/skills" component={Skills} />
-                      <Route path="/about" component={About} />
+                      <Route path="/bio" component={Bio} />
                       <Route
                         path="/theme"
                         render={({ props }) => (
