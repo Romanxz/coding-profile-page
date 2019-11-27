@@ -37,19 +37,19 @@ const Bio = props => {
         IN DEVELOPMENT
       </TextFX>
       <Spacer size={4} />
-      <Buttonlink key={12} glitch to="/skills">
+      <Buttonlink id={12} glitch to="/skills">
         SKILLS
       </Buttonlink>
       <Spacer size={3} />
-      <Buttonlink key={65} glitch to="/about">
+      <Buttonlink id={65} glitch to="/about">
         BIO
       </Buttonlink>
       <Spacer size={3} />
-      <Buttonlink key={667} glitch to="/theme">
+      <Buttonlink id={667} glitch to="/theme">
         THEME
       </Buttonlink>
       <Spacer size={3} />
-      <Buttonlink key={61} glitch to="/">
+      <Buttonlink id={61} glitch to="/">
         HOME
       </Buttonlink>
     </RouteContainer>

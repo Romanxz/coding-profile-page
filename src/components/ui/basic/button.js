@@ -75,11 +75,12 @@ class Button extends React.Component {
   }
 
   render() {
-    const { children, classes, disabled, glowoff, onClick } = this.props
+    const { children, classes, disabled, glowoff, onClick, id } = this.props
     return (
       <Shadow
         className={classes.button}
         {...this.props}
+        key={id}
         onClick={disabled ? null : onClick}
         onMouseMove={this.toggleHover}
         onMouseLeave={this.closePressHover}

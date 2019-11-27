@@ -22,12 +22,12 @@ const Menu = props => {
     >
       {props.links.map((value, id) => {
         return (
-          <>
-            <Spacer size={3} key={id} />
-            <Buttonlink key={id} glitch to={value.to}>
+          <div key={id + 10}>
+            <Spacer size={3} key={id + 20} />
+            <Buttonlink id={id} glitch to={value.to}>
               {value.name}
             </Buttonlink>
-          </>
+          </div>
         )
       })}
     </Grid>

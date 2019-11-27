@@ -6,6 +6,7 @@ import Menu from '../ui/advanced/menu'
 import Spacer from '../ui/basic/spacer'
 import Header from '../ui/advanced/text-fx/variants/header'
 import Text from '../ui/advanced/text-fx/variants/text'
+import Head from '../head/head'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -24,7 +25,9 @@ const Home = () => {
     <RouteContainer className={classes.container}>
       <Grid container direction="row">
         <Hidden smDown>
-          <Grid item md={6} lg={6} />
+          <Grid item md={6} lg={6}>
+            <Head />
+          </Grid>
         </Hidden>
         <Grid item container direction="column" xs={12} sm={12} md={6} lg={6}>
           <Grid
@@ -41,11 +44,11 @@ const Home = () => {
             <Header appear="left">ROMAN</Header>
             <Header appear="right">GORBUNOV</Header>
             <Spacer size={mdUp ? 4 : 2} />
-            <Text size={26} appear="left">
+            <Text bold uppercase size={20} appear="left">
               Javascript Programmer
             </Text>
             <Spacer size={2} />
-            <Text size={26} appear="right">
+            <Text bold uppercase size={20} appear="right">
               Web Designer
             </Text>
           </Grid>

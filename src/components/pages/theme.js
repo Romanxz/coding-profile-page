@@ -50,11 +50,11 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             <Spacer size={mdUp ? 10 : 2} />
             <Header appear="left">Theme</Header>
             <Spacer size={4} />
-            <Text appear="right" size={26}>
+            <Text appear="right" bold uppercase size={20}>
               Choose Your Theme
             </Text>
             <Spacer size={2} />
-            <Text appear="left" size={26}>
+            <Text appear="left" bold uppercase size={20}>
               Make a new one with custom hex codes
             </Text>
           </Grid>
