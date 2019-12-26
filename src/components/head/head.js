@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Canvas } from 'react-three-fiber'
+import React, { useState, useEffect, useRef } from 'react'
+import { Canvas, useRender } from 'react-three-fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -12,18 +12,28 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Headloader = () => {
+  const headRef = useRef()
   const [model, setModel] = useState()
   useEffect(() => {
     new GLTFLoader().load(process.env.PUBLIC_URL + '/scene.gltf', setModel)
   }, [])
+
   console.log(model)
-  return model ? <primitive object={model.scene} /> : null
+
+  useRender(() => {
+    headRef.current.rotation.y += 0.01
+  })
+  return (
+    <mesh ref={headRef}>
+      {model ? <primitive ref={headRef} object={model.scene} /> : null}
+    </mesh>
+  )
 }
 
 const Head = props => {
   const classes = useStyles()
   return (
-    <Canvas className={classes.canvas} camera={{ position: [0, 0, 5] }}>
+    <Canvas className={classes.canvas} camera={{ position: [0, 0, 3] }}>
       <ambientLight />
       <spotLight position={[0, 5, 10]} />
       <Headloader />

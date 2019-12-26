@@ -53,6 +53,7 @@ class App extends React.Component {
         primary: { main: '#0077ff' },
         secondary: { main: '#f7fffd' },
         shadow: 'rgba(0, 62, 138, 0.2)',
+        border: 'rgba(140, 255, 251, 0.6)',
       },
       background: '#1a1a1f',
     },

@@ -6,6 +6,7 @@ import Themeform from '../ui/advanced/form/themeform'
 import Spacer from '../ui/basic/spacer'
 import Header from '../ui/advanced/text-fx/variants/header'
 import Text from '../ui/advanced/text-fx/variants/text'
+import List from '../ui/advanced/list/list'
 
 const useStyles = makeStyles({
   container: {
@@ -44,7 +45,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             justify="flex-start"
             alignItems={mdUp ? 'flex-start' : 'center'}
             style={{
-              minHeight: mdUp ? '50%' : '40%',
+              minHeight: mdUp ? '70%' : '50%',
             }}
           >
             <Spacer size={mdUp ? 10 : 2} />
@@ -57,14 +58,16 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             <Text appear="left" bold uppercase size={20}>
               Make a new one with custom hex codes
             </Text>
+            <Spacer size={2} />
+            <List />
           </Grid>
-          <Themeform
+          {/* <Themeform
             mdUp={mdUp}
             theme={theme}
             toggleTheme={toggleTheme}
             updateBgColor={updateBgColor}
             updateTextColor={updateTextColor}
-          />
+          /> */}
         </Grid>
       </Grid>
     </RouteContainer>

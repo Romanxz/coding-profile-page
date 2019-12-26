@@ -26,7 +26,7 @@ const Home = () => {
       <Grid container direction="row">
         <Hidden smDown>
           <Grid item md={6} lg={6}>
-            <Head />
+            {/* <Head /> */}
           </Grid>
         </Hidden>
         <Grid item container direction="column" xs={12} sm={12} md={6} lg={6}>
