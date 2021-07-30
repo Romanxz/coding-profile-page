@@ -6,6 +6,7 @@ import Menu from '../ui/advanced/menu'
 import Spacer from '../ui/basic/spacer'
 import Header from '../ui/advanced/text-fx/variants/header'
 import TableRow from '../ui/advanced/tablerow'
+import Head from '../head/head'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -23,8 +24,10 @@ const Skills = () => {
   return (
     <RouteContainer className={classes.container}>
       <Grid container direction="row">
-        <Hidden smDown>
-          <Grid item md={5} lg={6} xl={6} />
+      <Hidden smDown>
+          <Grid item md={6} lg={6}>
+            <Head />
+          </Grid>
         </Hidden>
         <Grid
           item

@@ -4,6 +4,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { Grid, Hidden, useMediaQuery } from '@material-ui/core/'
 import Themeform from '../ui/advanced/form/themeform'
 import Spacer from '../ui/basic/spacer'
+import Head from '../head/head'
 import Header from '../ui/advanced/text-fx/variants/header'
 import Text from '../ui/advanced/text-fx/variants/text'
 import List from '../ui/advanced/list/list'
@@ -25,8 +26,10 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
   return (
     <RouteContainer className={classes.container}>
       <Grid container direction="row">
-        <Hidden smDown>
-          <Grid item md={6} lg={6} />
+      <Hidden smDown>
+          <Grid item md={6} lg={6}>
+            <Head />
+          </Grid>
         </Hidden>
         <Grid
           item
@@ -45,7 +48,7 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             justify="flex-start"
             alignItems={mdUp ? 'flex-start' : 'center'}
             style={{
-              minHeight: mdUp ? '70%' : '50%',
+              minHeight: mdUp ? '50%' : '40%',
             }}
           >
             <Spacer size={mdUp ? 10 : 2} />
@@ -58,16 +61,16 @@ const Theme = ({ theme, toggleTheme, updateBgColor, updateTextColor }) => {
             <Text appear="left" bold uppercase size={20}>
               Make a new one with custom hex codes
             </Text>
-            <Spacer size={2} />
-            <List />
+            {/* <Spacer size={2} /> */}
+            {/* <List /> */}
           </Grid>
-          {/* <Themeform
+          <Themeform
             mdUp={mdUp}
             theme={theme}
             toggleTheme={toggleTheme}
             updateBgColor={updateBgColor}
             updateTextColor={updateTextColor}
-          /> */}
+          />
         </Grid>
       </Grid>
     </RouteContainer>

@@ -41,10 +41,6 @@ const Bio = props => {
         SKILLS
       </Buttonlink>
       <Spacer size={3} />
-      <Buttonlink id={65} glitch to="/about">
-        BIO
-      </Buttonlink>
-      <Spacer size={3} />
       <Buttonlink id={667} glitch to="/theme">
         THEME
       </Buttonlink>
